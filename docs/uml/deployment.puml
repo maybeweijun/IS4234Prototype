@@ -1,0 +1,19 @@
+@startuml
+node "User workstation" {
+  artifact "Browser UI\nHTML / CSS / JavaScript" as UI
+}
+node "Local Node.js process" {
+  component "HTTP service\nloopback only :4234" as API
+  component "ethers test signers" as Signers
+  node "Hardhat simulated EVM\nchain 31337" {
+    artifact "SafeguardAssurance.sol" as Contract
+  }
+}
+database "Synthetic JSON / review exports\nOff-chain preimages" as Data
+UI --> API : same-origin HTTP
+API --> Signers : selected prototype actor
+Signers --> Contract : signed transactions
+Contract --> API : state and event logs
+API --> Data : read / hash / export
+note bottom of Contract : Implemented: isolated local EVM.\nProduction proposal: independently governed\npermissioned EVM validators and personal signing.\nNo production OTA connection is implemented.
+@enduml

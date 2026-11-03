@@ -1,0 +1,31 @@
+@startuml
+start
+:Validate JSON schema, scope and build;
+if (Laboratory import?) then (yes)
+  :Record per-scenario results;
+  :Evaluate coverage and laboratory gate;
+else (field)
+  :Require earlier limited decision for current build;
+  :Record attributable field comparison;
+  :Invalidate earlier authority;
+  if (Serious event / inactive safeguard?) then (yes)
+    :Failed;
+  elseif (Incomplete / incomparable / low exposure?) then (yes)
+    :Inconclusive;
+  elseif (Post event rate increases?) then (yes)
+    :Failed;
+  else (no)
+    :Eligible for reviewer assessment;
+  endif
+  if (Failed or inconclusive?) then (yes)
+    :Create action; engineer owner; due in seven days;
+  endif
+endif
+:Independent reviewer judgment and rationale;
+if (Required gates eligible and no open actions?) then (yes)
+  :Append time-limited snapshot decision;
+else (no)
+  :Block approval;
+endif
+stop
+@enduml

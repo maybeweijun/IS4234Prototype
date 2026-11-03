@@ -1,0 +1,13 @@
+{
+  "kind": "lab",
+  "synthetic": true,
+  "build": "autosteer-2026.1",
+  "records": [
+    { "configuration": "HW3-enabled", "scenario": 0, "trials": 40, "successes": 39, "accepted": true, "source": "synthetic-test-HW3-attention-r1" },
+    { "configuration": "HW3-enabled", "scenario": 1, "trials": 40, "successes": 39, "accepted": true, "source": "synthetic-test-HW3-mode-r1" },
+    { "configuration": "HW3-enabled", "scenario": 2, "trials": 40, "successes": 39, "accepted": true, "source": "synthetic-test-HW3-boundary-r1" },
+    { "configuration": "HW4-enabled", "scenario": 0, "trials": 40, "successes": 39, "accepted": true, "source": "synthetic-test-HW4-attention-r1" },
+    { "configuration": "HW4-enabled", "scenario": 1, "trials": 40, "successes": 39, "accepted": true, "source": "synthetic-test-HW4-mode-r1" },
+    { "configuration": "HW4-enabled", "scenario": 2, "trials": 40, "successes": 39, "accepted": true, "source": "synthetic-test-HW4-boundary-r1" }
+  ]
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safeguard | Autosteer Assurance</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="/">S<span>Safeguard</span></a><span class="header-label">RELEASE GOVERNANCE / AUTOSTEER</span><span class="network"><i></i> Local assurance network</span></header>
+  <div class="demo-notice">PROTOTYPE ENVIRONMENT <span>Sample data · Evidence review · Accountable release decisions</span></div>
+  <main>
+    <section class="intro"><div><p class="eyebrow">GOVERNANCE · RISK · COMPLIANCE</p><h1>Evidence before expansion.</h1><p class="lede">An accountable decision trail for Autosteer safeguards, from validation to corrective action.</p></div><a class="button secondary" data-roles="Reviewer SecondReviewer SafetyLead Observer" href="/api/export" download="safeguard-review.json">↓ Export review package</a></section>
+    <section class="identity"><div><label for="actor">Active workspace role</label><select id="actor"><option value="Engineer">Engineer</option><option value="Reviewer">Safety reviewer</option><option value="Analyst">Field analyst</option><option value="SafetyLead">Safety lead</option><option value="SecondReviewer">Second reviewer</option><option value="Observer">Auditor / observer</option></select></div><div><span id="actor-purpose"></span><code id="actor-address"></code></div><button id="refresh" class="secondary">Refresh workspace</button></section>
+    <section class="role-context"><div><p class="eyebrow">YOUR WORKSPACE</p><h2 id="workspace-title">Engineering</h2><p id="workspace-description"></p></div><div class="next-step"><span>Recommended next step</span><p id="next-step"></p></div></section>
+    <div id="feedback" role="status" aria-live="polite">Connecting to the assurance registry…</div>
+    <section class="stats" id="stats"></section>
+    <section id="candidate-panel" class="panel candidate-panel"><div class="section-title"><div><p class="eyebrow">01 / CANDIDATE & SCOPE</p><h2 id="candidate-title">Loading candidate</h2></div><span class="pill" id="stage"></span></div><p class="section-help">This is the software build under review and the vehicle configurations its evidence must cover. Approval applies to this exact scope and evidence revision.</p><p id="scope"></p><div class="meta" id="meta"></div></section>
+    <section class="two-column adaptive-grid">
+      <div id="ingestion-panel" class="panel" data-roles="Engineer Analyst">
+        <p class="eyebrow" id="ingestion-eyebrow">02 / LABORATORY VALIDATION</p><h2 id="ingestion-title">Submit validation evidence</h2><p class="section-help" id="ingestion-help"></p>
+        <div class="row"><select id="sample" aria-label="Evidence sample"><option value="lab-pass" data-kind="lab">Validation: complete scenario coverage</option><option value="field-adverse" data-kind="field">Monitoring: adverse event trend</option><option value="field-improved" data-kind="field">Monitoring: follow-up evidence</option><option value="field-inconclusive" data-kind="field">Monitoring: insufficient exposure</option></select><button class="secondary" id="load-sample">Load sample</button></div>
+        <label for="evidence">Evidence JSON</label><textarea id="evidence" rows="10" spellcheck="false"></textarea><button id="import">Submit evidence</button><p class="caption">One transaction per record. Each confirmed result receives a source fingerprint; an import can be partially committed if a later transaction fails.</p>
+      </div>
+      <div id="decision-panel" class="panel" data-roles="Reviewer SecondReviewer" hidden>
+        <p class="eyebrow">03 / INDEPENDENT DECISION</p><h2>Make a release judgment</h2><p class="section-help">Inspect the evidence below, document your judgment and authorise a limited rollout or expansion. You must be independent of the candidate's data contributors. Unresolved actions block approval.</p>
+        <label for="rationale">Decision rationale</label><textarea id="rationale" rows="4" placeholder="Describe the evidence reviewed, remaining uncertainty and conditions supporting this decision."></textarea>
+        <div class="row"><div><label for="days">Decision validity</label><select id="days"><option value="1">1 day</option><option value="7" selected>7 days</option><option value="30">30 days</option></select></div><div class="decision-buttons"><button data-command="approve-limited">Approve limited deployment</button><button data-command="approve-expansion" class="secondary">Approve expansion</button></div></div>
+        <details><summary>Raise a concern instead of approving</summary><p class="caption">The rationale above becomes the concern description. A different independent reviewer must close a concern you report.</p><button data-command="concern" class="danger reviewer-concern">Report a credible concern</button></details>
+      </div>
+      <div id="signal-panel" class="panel" data-roles="Analyst SafetyLead" hidden>
+        <p class="eyebrow">03 / SAFETY SIGNAL</p><h2>Raise a concern</h2><p class="section-help">Escalate a credible safety concern independently of the release owner. The contract records an investigation action, assigns the engineer and reopens review.</p>
+        <label for="concern-description">Concern and supporting evidence</label><textarea id="concern-description" rows="4" placeholder="Describe the credible signal and reference its source evidence."></textarea><button data-command="concern" class="danger">Report a credible concern</button>
+      </div>
+    </section>
+    <section id="coverage-panel" class="panel" data-roles="Engineer Analyst Reviewer SecondReviewer Observer">
+      <div class="section-title"><div><p class="eyebrow">04 / EVIDENCE ASSESSMENT</p><h2 id="coverage-title">Scenario and configuration coverage</h2></div></div><p class="section-help" id="coverage-help"></p>
+      <div id="lab-coverage" class="table-wrap" data-roles="Engineer Reviewer SecondReviewer Observer"><table><thead><tr><th>Configuration</th><th>Scenario</th><th>Result</th><th>Gate</th><th>Explanation</th></tr></thead><tbody id="labs"></tbody></table></div>
+      <div class="field-grid" id="fields" data-roles="Analyst Reviewer SecondReviewer Observer"></div>
+    </section>
+    <section class="two-column adaptive-grid">
+      <div id="actions-panel" class="panel"><div class="section-title"><div><p class="eyebrow">05 / CORRECTIVE ACTIONS</p><h2 id="actions-title">Investigations and follow-up</h2></div></div><p class="section-help" id="actions-help"></p><div id="actions"></div>
+        <div data-roles="Reviewer SecondReviewer SafetyLead" hidden><label for="action-id">Action ID</label><input id="action-id" type="number" min="1" value="1"></div>
+        <div id="closure-controls" data-roles="Reviewer SecondReviewer" hidden>
+          <label for="resolution">Resolution evidence / investigation summary</label><textarea id="resolution" rows="3" placeholder="Reference the investigation and evidence that support closure."></textarea>
+          <label for="closure-rationale">Independent closure rationale</label><textarea id="closure-rationale" rows="3" placeholder="Explain why the concern can be closed and any remaining limitations."></textarea>
+          <button data-command="close">Close action independently</button><p class="caption">Closure records your investigation judgment. It never grants release authority; return to section 03 for a separate decision.</p>
+        </div>
+        <div id="escalation-controls" data-roles="SafetyLead" hidden><button data-command="escalate" class="secondary">Escalate overdue action</button><details><summary>Prototype clock controls</summary><p class="caption">Advance only the local test clock to exercise overdue follow-up. This also advances decision expiry dates.</p><button data-command="advance-time" class="secondary">Advance review clock 8 days</button></details></div>
+      </div>
+      <div id="history-panel" class="panel" data-roles="Engineer Reviewer SecondReviewer SafetyLead Observer"><p class="eyebrow">06 / DECISION HISTORY</p><h2>The basis of each judgment</h2><p class="section-help">Inspect who decided, which evidence revision they reviewed and how long the decision applies. Earlier judgments stay visible after review reopens; the authority card shows what is currently valid.</p><div id="decisions"></div></div>
+    </section>
+    <section id="build-panel" class="panel" data-roles="Engineer"><p class="eyebrow">LIFECYCLE / BUILD REVISION</p><h2>Submit a material build change</h2><p class="section-help">A changed software build needs fresh evidence. Revising it reopens review and makes earlier results stale while preserving the decision history.</p><div class="row"><div class="build-input"><label for="build">New candidate build</label><input id="build" value="autosteer-2026.2"></div><div class="build-input"><label for="build-rationale">Change rationale</label><textarea id="build-rationale" rows="2" placeholder="Explain the material change and its assurance implications."></textarea></div></div><button data-command="revise" class="secondary">Revise candidate build</button></section>
+    <section id="audit-panel" class="panel" data-roles="Observer" hidden><p class="eyebrow">07 / INSPECTABLE AUDIT TRAIL</p><h2>Confirmed blockchain events</h2><p class="section-help">Reconstruct the order of evidence submissions, role assignments, decisions and actions. Export the review package to inspect inputs and fingerprints alongside this history.</p><div class="table-wrap"><table><thead><tr><th>Block</th><th>Event</th><th>Transaction fingerprint</th></tr></thead><tbody id="events"></tbody></table></div><details><summary>Request activity, including rejected attempts</summary><p class="caption">Request activity is recorded by the workspace service. Rejected requests do not create confirmed blockchain events.</p><div id="requests"></div></details></section>
+    <footer><strong>Assurance supports judgment.</strong><span>Configured review criteria: ≥30 trials · ≥95% successful responses · ≥1,000 engaged miles per cohort · no event-rate increase. Eligibility does not certify safety or regulatory compliance.</span><span>Views focus each role's work. Contract permissions govern write actions; role selection uses prototype test identities.</span></footer>
+  </main>
+</body>
+</html>

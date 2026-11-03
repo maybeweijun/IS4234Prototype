@@ -27,5 +27,14 @@
 # Gas snapshot files
 /.gas-snapshot
 
+# Local review artifacts and PDF scratch renders
+/tmp
+/output/demo
+/output/pdf
+/output/validation
+/output/presentation
+/output/*.zip
+/output/G21_Demonstrator_Guide.pdf
+
 # Snapshot cheatcodes output
 /snapshots

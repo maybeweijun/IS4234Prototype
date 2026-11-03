@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+actor Engineer
+actor "Independent reviewer" as Reviewer
+actor "Field analyst" as Analyst
+actor "Safety lead" as Lead
+actor "Auditor / regulator" as Auditor
+rectangle "Safeguard Assurance" {
+  usecase "Create / revise candidate\nSubmit laboratory evidence" as Lab
+  usecase "Approve limited deployment\nApprove expansion" as Decision
+  usecase "Submit field evidence\nReport concern" as Field
+  usecase "Close action independently" as Close
+  usecase "Govern participant roles\nInspect escalations" as Govern
+  usecase "Inspect / export review history" as Read
+  usecase "Escalate overdue action" as Escalate
+}
+Engineer -- Lab
+Reviewer -- Decision
+Reviewer -- Close
+Reviewer -- Field
+Analyst -- Field
+Lead -- Govern
+Lead -- Field
+Auditor -- Read
+Auditor -- Escalate
+note bottom of Escalate : Any address may trigger overdue escalation.\nReaders need no on-chain auditor role.\nRegulators are evidence recipients, not release approvers.
+@enduml

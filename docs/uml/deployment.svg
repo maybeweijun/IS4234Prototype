@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="480" height="265" preserveAspectRatio="xMinYMin meet" viewBox="0 0 480 265" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="480" height="265"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-265)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="175" y="10" width="300" height="245" rx="7" ry="7" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: none; fill-rule: evenodd; stroke-dasharray: 4, 3;"/>
+			<text x="271.925" y="238" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,476) scale(1,-1)">Local Node.js process</text>
+			<rect x="5" y="65" width="145" height="90" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="56.596000000000004" y="137" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,274) scale(1,-1)">&lt;&lt;device&gt;&gt;</text>
+			<text x="30.259999999999998" y="122" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,244) scale(1,-1)">Browser workspace</text>
+			<path d="M 5,113 L 150,113 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="14" y="97" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,194) scale(1,-1)">Role-specific views</text>
+			<text x="14" y="86" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,172) scale(1,-1)">Evidence and decisions</text>
+			<rect x="195" y="65" width="125" height="90" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="228.368" y="137" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,274) scale(1,-1)">&lt;&lt;component&gt;&gt;</text>
+			<text x="223.315" y="122" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,244) scale(1,-1)">Signer service</text>
+			<path d="M 195,113 L 320,113 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="204" y="97" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,194) scale(1,-1)">HTTP / ethers</text>
+			<text x="204" y="86" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,172) scale(1,-1)">Prototype test keys</text>
+			<rect x="195" y="175" width="260" height="45" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="250.964" y="202" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,404) scale(1,-1)">&lt;&lt;executionEnvironment&gt;&gt; Hardhat EVM</text>
+			<text x="266.37" y="187" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,374) scale(1,-1)">SafeguardAssurance.sol</text>
+			<rect x="350" y="65" width="110" height="90" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="383.652" y="137" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,274) scale(1,-1)">&lt;&lt;artifact&gt;&gt;</text>
+			<text x="371.65" y="122" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,244) scale(1,-1)">Evidence files</text>
+			<path d="M 350,113 L 460,113 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="359" y="97" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,194) scale(1,-1)">JSON / preimages</text>
+			<text x="359" y="86" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,172) scale(1,-1)">Review exports</text>
+			<path d="M 150,110 L 195,110 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="195 110, 189.5973 112.6098, 189.5973 107.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="162.056" y="120" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,240) scale(1,-1)">HTTP</text>
+			<path d="M 257,155 L 257,175 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="257 175, 254.3902 169.5973, 259.6098 169.5973" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="267.744" y="162" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,324) scale(1,-1)">Signed transactions / state / events</text>
+			<path d="M 320,110 L 350,110 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="350 110, 344.5973 112.6098, 344.5973 107.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="317.4895" y="95" style="font-family: Helvetica; font-size: 7px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,190) scale(1,-1)">hash / read</text>
+			<text x="90.156" y="30" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,60) scale(1,-1)">Production: replace test signing, storage and local EVM with governed infrastructure.</text>
+		</g>
+	</g>
+</svg>

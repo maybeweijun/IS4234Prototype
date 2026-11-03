@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="480" height="340" preserveAspectRatio="xMinYMin meet" viewBox="0 0 480 340" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="480" height="340"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-340)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="2" y="310" width="66" height="25" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="17.884" y="319" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,638) scale(1,-1)">Engineer</text>
+			<path d="M 35,20 L 35,310 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<rect x="102" y="310" width="66" height="25" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="117.436" y="319" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,638) scale(1,-1)">Reviewer</text>
+			<path d="M 135,20 L 135,310 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<rect x="202" y="310" width="66" height="25" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="207.652" y="319" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,638) scale(1,-1)">Signer service</text>
+			<path d="M 235,20 L 235,310 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<rect x="307" y="310" width="66" height="25" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="323.556" y="319" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,638) scale(1,-1)">Contract</text>
+			<path d="M 340,20 L 340,310 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<rect x="412" y="310" width="66" height="25" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="430.552" y="319" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,638) scale(1,-1)">Analyst</text>
+			<path d="M 445,20 L 445,310 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<path d="M 35,282 L 235,282 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="235 282, 229.5973 284.6098, 229.5973 279.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="87.648" y="291" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,582) scale(1,-1)">Import laboratory evidence</text>
+			<path d="M 235,253 L 340,253 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="340 253, 334.5973 255.6098, 334.5973 250.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="264.156" y="262" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,524) scale(1,-1)">recordLab x6</text>
+			<path d="M 135,224 L 235,224 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="235 224, 229.5973 226.6098, 229.5973 221.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="152.876" y="233" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,466) scale(1,-1)">Rationale + expiry</text>
+			<path d="M 235,195 L 340,195 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="340 195, 334.5973 197.6098, 334.5973 192.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="260.156" y="204" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,408) scale(1,-1)">approveLimited</text>
+			<path d="M 445,166 L 340,166 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="340 166, 345.4027 163.3902, 345.4027 168.6098" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="360.484" y="175" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,350) scale(1,-1)">Adverse field data</text>
+			<path d="M 340,137 L 235,137 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 3;"/>
+			<polygon points="235 137, 240.4027 134.3902, 240.4027 139.6098" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="258.26" y="146" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,292) scale(1,-1)">Reopen + action</text>
+			<path d="M 445,108 L 340,108 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="340 108, 345.4027 105.3902, 345.4027 110.6098" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="358.484" y="117" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,234) scale(1,-1)">Improved field data</text>
+			<path d="M 135,79 L 340,79 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="340 79, 334.5973 81.60979, 334.5973 76.39021" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="197.04399999999998" y="88" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,176) scale(1,-1)">closeAction via service</text>
+			<path d="M 135,42 L 340,42 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="340 42, 334.5973 44.60979, 334.5973 39.39021" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="167.024" y="51" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,102) scale(1,-1)">Separate approveExpansion via service</text>
+		</g>
+	</g>
+</svg>

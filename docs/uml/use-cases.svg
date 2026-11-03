@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="480" height="355" preserveAspectRatio="xMinYMin meet" viewBox="0 0 480 355" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="480" height="355"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-355)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="85" y="10" width="310" height="335" rx="6" ry="6" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="165.255" y="329" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,658) scale(1,-1)">Safeguard assurance boundary</text>
+			<ellipse cx="240.0" cy="290.0" rx="128.0" ry="24.0" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="189.978" y="294" style="font-family: Helvetica; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,588) scale(1,-1)">Create / revise candidate</text>
+			<text x="185.478" y="282" style="font-family: Helvetica; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,564) scale(1,-1)">Submit laboratory evidence</text>
+			<ellipse cx="240.0" cy="225.0" rx="128.0" ry="24.0" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="194.973" y="229" style="font-family: Helvetica; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,458) scale(1,-1)">Independent decisions</text>
+			<text x="203.48250000000002" y="217" style="font-family: Helvetica; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,434) scale(1,-1)">and action closure</text>
+			<ellipse cx="240.0" cy="160.0" rx="128.0" ry="24.0" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="210.9885" y="164" style="font-family: Helvetica; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,328) scale(1,-1)">Field evidence</text>
+			<text x="199.7295" y="152" style="font-family: Helvetica; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,304) scale(1,-1)">and safety concerns</text>
+			<ellipse cx="240.0" cy="95.0" rx="128.0" ry="24.0" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="205.9845" y="99" style="font-family: Helvetica; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,198) scale(1,-1)">Role governance</text>
+			<text x="191.4765" y="87" style="font-family: Helvetica; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,174) scale(1,-1)">and escalation oversight</text>
+			<ellipse cx="240.0" cy="35.0" rx="128.0" ry="24.0" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="194.73" y="39" style="font-family: Helvetica; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,78) scale(1,-1)">Inspect / export history</text>
+			<text x="193.4745" y="27" style="font-family: Helvetica; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,54) scale(1,-1)">and overdue escalation</text>
+			<circle cx="35" cy="306" r="6" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1; fill: none; fill-rule: evenodd;"/>
+			<path d="M 35,300 L 35,282 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 25,294 L 45,294 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 35,282 L 26,271 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 35,282 L 44,271 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="18.992" y="259" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,518) scale(1,-1)">Engineer</text>
+			<path d="M 47,290 L 112,290 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<circle cx="35" cy="176" r="6" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1; fill: none; fill-rule: evenodd;"/>
+			<path d="M 35,170 L 35,152 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 25,164 L 45,164 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 35,152 L 26,141 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 35,152 L 44,141 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="21.884" y="129" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,258) scale(1,-1)">Analyst</text>
+			<path d="M 47,160 L 112,160 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<circle cx="445" cy="241" r="6" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1; fill: none; fill-rule: evenodd;"/>
+			<path d="M 445,235 L 445,217 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 435,229 L 455,229 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 445,217 L 436,206 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 445,217 L 454,206 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="428.332" y="194" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,388) scale(1,-1)">Reviewer</text>
+			<path d="M 433,225 L 368,225 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<circle cx="445" cy="111" r="6" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1; fill: none; fill-rule: evenodd;"/>
+			<path d="M 445,105 L 445,87 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 435,99 L 455,99 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 445,87 L 436,76 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 445,87 L 454,76 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="424.988" y="64" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,128) scale(1,-1)">Safety lead</text>
+			<path d="M 433,95 L 368,95 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<circle cx="445" cy="51" r="6" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1; fill: none; fill-rule: evenodd;"/>
+			<path d="M 445,45 L 445,27 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 435,39 L 455,39 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 445,27 L 436,16 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 445,27 L 454,16 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<text x="428.552" y="4" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,8) scale(1,-1)">Observer</text>
+			<path d="M 433,35 L 368,35 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.8;"/>
+		</g>
+	</g>
+</svg>

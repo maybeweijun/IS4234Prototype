@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="480" height="320" preserveAspectRatio="xMinYMin meet" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="480" height="320"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-320)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="205" width="145" height="105" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="22.485" y="292" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,584) scale(1,-1)">SafeguardAssurance</text>
+			<path d="M 0,283 L 145,283 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="9" y="267" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,534) scale(1,-1)">roles / contributors</text>
+			<text x="9" y="256" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,512) scale(1,-1)">immutable safetyLead</text>
+			<text x="9" y="245" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,490) scale(1,-1)">constant RULE_HASH</text>
+			<rect x="170" y="190" width="145" height="120" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="218.32999999999998" y="292" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,584) scale(1,-1)">Candidate</text>
+			<path d="M 170,283 L 315,283 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="179" y="267" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,534) scale(1,-1)">engineer / buildHash</text>
+			<text x="179" y="256" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,512) scale(1,-1)">scopeHash / stage</text>
+			<text x="179" y="245" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,490) scale(1,-1)">buildRevision</text>
+			<text x="179" y="234" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,468) scale(1,-1)">evidenceRevision</text>
+			<text x="179" y="223" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,446) scale(1,-1)">openActions / limitedEver</text>
+			<rect x="340" y="205" width="140" height="105" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="379.155" y="292" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,584) scale(1,-1)">LabEvidence</text>
+			<path d="M 340,283 L 480,283 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="349" y="267" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,534) scale(1,-1)">buildRevision / submitter</text>
+			<text x="349" y="256" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,512) scale(1,-1)">trials / successes</text>
+			<text x="349" y="245" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,490) scale(1,-1)">accepted / digest</text>
+			<rect x="0" y="10" width="145" height="125" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="51.66" y="117" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,234) scale(1,-1)">Decision</text>
+			<path d="M 0,108 L 145,108 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="9" y="92" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,184) scale(1,-1)">stage / reviewer</text>
+			<text x="9" y="81" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,162) scale(1,-1)">build + evidence revision</text>
+			<text x="9" y="70" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,140) scale(1,-1)">snapshotHash</text>
+			<text x="9" y="59" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,118) scale(1,-1)">rationaleHash</text>
+			<text x="9" y="48" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,96) scale(1,-1)">decidedAt / validUntil</text>
+			<rect x="170" y="10" width="145" height="125" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="226.945" y="117" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,234) scale(1,-1)">Action</text>
+			<path d="M 170,108 L 315,108 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="179" y="92" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,184) scale(1,-1)">owner / reporter / closedBy</text>
+			<text x="179" y="81" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,162) scale(1,-1)">openedAt / dueAt</text>
+			<text x="179" y="70" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,140) scale(1,-1)">reason / evidenceHash</text>
+			<text x="179" y="59" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,118) scale(1,-1)">closed / escalated</text>
+			<text x="179" y="48" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,96) scale(1,-1)">resolution / rationale hash</text>
+			<rect x="340" y="10" width="140" height="125" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="376.375" y="117" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,234) scale(1,-1)">FieldEvidence</text>
+			<path d="M 340,108 L 480,108 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="349" y="92" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,184) scale(1,-1)">buildRevision / submitter</text>
+			<text x="349" y="81" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,162) scale(1,-1)">baseline + post counts</text>
+			<text x="349" y="70" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,140) scale(1,-1)">engaged miles</text>
+			<text x="349" y="59" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,118) scale(1,-1)">quality + activation flags</text>
+			<text x="349" y="48" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,96) scale(1,-1)">digest</text>
+			<path d="M 145,255 L 170,255 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="170 255, 164.5973 257.6098, 164.5973 252.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<path d="M 315,255 L 340,255 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="340 255, 334.5973 257.6098, 334.5973 252.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<path d="M 170,200 L 90,135 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="90 135, 95.83881 136.3814, 92.54738 140.4324" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="101.436" y="174" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,348) scale(1,-1)">1 / 0..*</text>
+			<path d="M 242,190 L 242,135 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="242 135, 244.6098 140.4027, 239.3902 140.4027" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="264.436" y="157" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,314) scale(1,-1)">1 / 0..*</text>
+			<path d="M 315,200 L 405,135 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="405 135, 402.1482 140.2789, 399.0921 136.0475" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="366.768" y="174" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,348) scale(1,-1)">1 / 0..8</text>
+		</g>
+	</g>
+</svg>

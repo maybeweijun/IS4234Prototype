@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="480" height="235" preserveAspectRatio="xMinYMin meet" viewBox="0 0 480 235" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="480" height="235"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-235)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="140" y="190" width="200" height="35" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="173.875" y="207" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,414) scale(1,-1)">Current-build field evidence</text>
+			<path d="M 240,190 L 240,173 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="240 173, 242.6098 178.4027, 237.3902 178.4027" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<polygon points="240 173, 310 150, 240 127, 170 150" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="209.4855" y="147" style="font-family: Helvetica-Bold; font-size: 9px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,294) scale(1,-1)">Evaluate rules</text>
+			<rect x="5" y="65" width="140" height="35" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="60.55" y="82" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,164) scale(1,-1)">Failed</text>
+			<rect x="170" y="65" width="140" height="35" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="209.71" y="82" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,164) scale(1,-1)">Inconclusive</text>
+			<rect x="335" y="65" width="140" height="35" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="362.205" y="82" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,164) scale(1,-1)">Eligible for review</text>
+			<path d="M 170,150 L 75,150 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 75,150 L 75,100 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="75 100, 77.60979 105.4027, 72.39021 105.4027" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="39.986000000000004" y="119" style="font-family: Helvetica; font-size: 7px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,238) scale(1,-1)">serious / inactive / rate</text>
+			<path d="M 240,127 L 240,100 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="240 100, 242.6098 105.4027, 237.3902 105.4027" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="205.7595" y="110" style="font-family: Helvetica; font-size: 7px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,220) scale(1,-1)">quality / exposure gap</text>
+			<path d="M 310,150 L 405,150 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 405,150 L 405,100 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="405 100, 407.6098 105.4027, 402.3902 105.4027" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="382.8275" y="119" style="font-family: Helvetica; font-size: 7px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,238) scale(1,-1)">all checks met</text>
+			<rect x="60" y="5" width="260" height="35" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="95.25999999999999" y="22" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,44) scale(1,-1)">Owned action / independent disposition</text>
+			<path d="M 75,65 L 140,40 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="140 40, 135.8943 44.37529, 134.0206 39.50361" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<path d="M 240,65 L 240,40 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="240 40, 242.6098 45.40268, 237.3902 45.40268" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<rect x="340" y="5" width="135" height="35" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="361.655" y="22" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,44) scale(1,-1)">Reviewer judgment</text>
+			<path d="M 405,65 L 405,40 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="405 40, 407.6098 45.40268, 402.3902 45.40268" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+		</g>
+	</g>
+</svg>

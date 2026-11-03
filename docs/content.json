@@ -1,0 +1,855 @@
+{
+  "solution": {
+    "title": "Safeguard",
+    "subtitle": "Blockchain assurance for accountable software release decisions",
+    "filename": "Safeguard_Solution_Design.pdf",
+    "pages": [
+      {
+        "title": "The GRC problem and the proposed solution",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Safeguard is a working Solidity and Hardhat prototype for governing Autosteer safeguard changes. It connects a candidate software build, its vehicle configurations, validation evidence, independent release judgments and subsequent corrective actions in one inspectable decision trail."
+          },
+          {
+            "type": "h",
+            "text": "Design basis"
+          },
+          {
+            "type": "p",
+            "text": "The supplied report identifies an assurance gap: distributing an OTA remedy does not establish that its safeguards are enabled, change driver behaviour or reduce risk. Its research question asks how evidence of foreseeable misuse should inform accountable release and corrective-action decisions. This implementation follows the core controls C2-C5 in section 4.2 and the workflow in sections 4.3-4.6 (PDF pages 14-18). It does not reconstruct Tesla's internal approval process."
+          },
+          {
+            "type": "table",
+            "widths": [
+              0.18,
+              0.39,
+              0.43
+            ],
+            "rows": [
+              [
+                "Control",
+                "GRC weakness addressed",
+                "Implemented mechanism"
+              ],
+              [
+                "C2 / preventive",
+                "Missing, failed or wrong-version evidence can be overlooked.",
+                "Each configuration needs three scenario results. Incomplete or stale evidence blocks the gate."
+              ],
+              [
+                "C3 / governance",
+                "Delivery ownership can conflict with independent challenge.",
+                "Only an assigned reviewer can approve; candidate contributors remain ineligible even after a role change."
+              ],
+              [
+                "C4 / change control",
+                "Old approval can silently persist after a material change.",
+                "Evidence revisions revoke current authority. Build revisions also make earlier records stale; original decisions remain visible."
+              ],
+              [
+                "C5 / monitoring",
+                "Adverse findings may lack ownership or timely follow-up.",
+                "Failed or inconclusive field submissions open an engineer-owned action, due in seven days. Independent closure and a separate decision are required."
+              ]
+            ]
+          },
+          {
+            "type": "h",
+            "text": "How the technology changes the process"
+          },
+          {
+            "type": "p",
+            "text": "The rules execute in a smart contract rather than only in a dashboard. A transaction cannot create an affirmative release decision while required checks fail or actions remain open. Evidence hashes, transaction senders, revision numbers and decision events bind the judgment to a specific snapshot. This makes unsupported approvals harder to record and makes changed evidence consequential."
+          },
+          {
+            "type": "note",
+            "text": "Scope boundary: the prototype addresses assurance governance. It does not redesign driver monitoring, operate a vehicle, deliver OTA software, make a legal determination or establish that a collision would have been prevented. C1 safety-change classification and C6 recall-campaign reconciliation remain organisational controls and future integrations."
+          }
+        ]
+      },
+      {
+        "title": "Users, decision rights and accountability",
+        "blocks": [
+          {
+            "type": "table",
+            "widths": [
+              0.21,
+              0.45,
+              0.34
+            ],
+            "rows": [
+              [
+                "User",
+                "Responsibility",
+                "Prototype permission"
+              ],
+              [
+                "Engineering / validation owner",
+                "Own the build and scope; submit scenario evidence; investigate assigned actions.",
+                "Engineer: candidate creation, laboratory records and build revisions."
+              ],
+              [
+                "Independent safety reviewer / release authority",
+                "Challenge evidence, assess residual uncertainty and explain release or closure judgments.",
+                "Reviewer: limited and expansion decisions; independent action closure."
+              ],
+              [
+                "Field safety analyst",
+                "Validate comparison cohorts and exposure, attest field summaries and raise concerns.",
+                "Analyst: field records and protected concern reporting."
+              ],
+              [
+                "Executive safety lead",
+                "Appoint qualified reviewers, govern roles and respond to escalations.",
+                "SafetyLead: role administration and concern reporting. Test-clock control is a service feature."
+              ],
+              [
+                "Internal audit / compliance / regulator",
+                "Inspect the evidence trail; assess process adherence or receive reviewed packages.",
+                "Observer: read and export. No regulator approval role is required."
+              ]
+            ]
+          },
+          {
+            "type": "p",
+            "text": "The design follows the report's Three Lines distinction: engineering retains operational ownership; safety and compliance provide challenge; internal audit assesses process effectiveness. The prototype combines qualified safety review and release authority into one reviewer role. A production organisation could require two separate approvals. Drivers, passengers and other road users are beneficiaries rather than routine system operators."
+          },
+          {
+            "type": "note",
+            "text": "An Ethereum address proves which key signed a transaction, not the identity or independence of a person. A single person controlling multiple wallets, reviewer collusion or compromised role administration requires identity, personnel and key-management controls beyond this contract."
+          }
+        ]
+      },
+      {
+        "title": "Role interactions and protected decision rights",
+        "blocks": [
+          {
+            "type": "diagram",
+            "name": "use-cases",
+            "caption": "UML use-case view. Selected responsibilities are shown; all chain data are readable by participants with node access."
+          },
+          {
+            "type": "p",
+            "text": "The user interface now presents a focused workspace for each responsibility. Engineers see laboratory submissions and build changes; analysts see field evidence and concern reporting; reviewers see evidence inspection, decisions and independent closure; safety leads see overdue follow-up; auditors see the full read-only history and export. Shared candidate context and summary gates keep the participants aligned."
+          },
+          {
+            "type": "note",
+            "text": "View filtering reduces interface complexity; it does not provide data confidentiality. The local API returns review information and the ledger is readable to node participants. Write permissions remain enforced by the contract. Production identity and data-access controls are separate requirements."
+          }
+        ]
+      },
+      {
+        "title": "Architecture and the blockchain decision",
+        "blocks": [
+          {
+            "type": "diagram",
+            "name": "deployment",
+            "caption": "UML deployment view of the implemented local prototype. Each server session creates an isolated Hardhat EVM."
+          },
+          {
+            "type": "table",
+            "widths": [
+              0.24,
+              0.76
+            ],
+            "rows": [
+              [
+                "Layer",
+                "Implementation and purpose"
+              ],
+              [
+                "Browser workspace",
+                "Local HTML, CSS and JavaScript show required coverage, explained gates, actions and event history. No external assets or browser wallet are required."
+              ],
+              [
+                "Local signer service",
+                "A loopback-only Node.js service validates JSON, selects prototype test signers and submits ethers transactions. It serialises requests and exports review packages."
+              ],
+              [
+                "Smart contract",
+                "Solidity enforces roles, versioned evidence gates, contributor separation, expiring decisions and corrective-action state. Optimised runtime bytecode is below the EVM deployment size limit."
+              ],
+              [
+                "Off-chain evidence",
+                "Synthetic JSON and canonical preimages make the prototype reproducible. Real studies, telemetry, rationale documents and build artifacts would remain in an access-controlled evidence repository."
+              ]
+            ]
+          },
+          {
+            "type": "h",
+            "text": "Why blockchain is useful, and when it is not necessary"
+          },
+          {
+            "type": "p",
+            "text": "A shared ledger could give engineering, independent safety assurance and external assessors a common ordering of evidence and decisions without relying on one team's editable spreadsheet. A production option is a permissioned EVM network with validators governed by genuinely separate parties. Read permissions, validator membership and independent operation would need explicit agreement; this prototype does not implement those network controls."
+          },
+          {
+            "type": "p",
+            "text": "A signed, append-only database may suffice when one trusted operator controls the workflow. Blockchain adds value when independent parties share governance and verify the record. The resettable local Hardhat chain demonstrates contract behaviour, not durable multi-party immutability."
+          }
+        ]
+      },
+      {
+        "title": "Data model, evidence integrity and history",
+        "blocks": [
+          {
+            "type": "diagram",
+            "name": "classes",
+            "caption": "UML class view of selected contract fields. LabInput and FieldInput are flattened for readability. The contract supports up to eight configurations."
+          },
+          {
+            "type": "p",
+            "text": "A candidate fixes its configuration list and three required scenarios before evidence is submitted: driver attention, mode confusion and operating boundary. Changing the configuration scope requires a new candidate. Each laboratory or field record identifies the candidate's current build revision, submitting address and a non-zero content digest. Decisions are append-only records; current evidence mappings are supplemented by events containing every superseded input."
+          },
+          {
+            "type": "p",
+            "text": "The evidence digest is Keccak-256 of a UTF-8 JSON record serialised in the fixed field order defined by canonicalEvidence. The payload includes schema, synthetic-data flag, kind, build label, configuration, scenario or field measurements, quality declarations and source identifier. The service retains that canonical string in the review package, so changing a result or its source changes the fingerprint."
+          },
+          {
+            "type": "p",
+            "text": "A decision snapshot separately binds chain ID, contract address, candidate ID, build and scope hashes, build revision, evidence revision, ordered configurations and RULE_HASH using Solidity abi.encode. The rationale hash and validity window are stored with the reviewing address. Every evidence mutation changes the revision; the resulting current snapshot no longer matches an older approval."
+          },
+          {
+            "type": "note",
+            "text": "The prototype hashes a build label for reproducibility. Production must hash the actual signed software artifact and authoritative configuration manifest. Hash matching establishes integrity relative to a trusted recorded hash; it cannot establish truthful measurements, appropriate study design or off-chain data availability."
+          }
+        ]
+      },
+      {
+        "title": "Review rules and explicit uncertainty",
+        "blocks": [
+          {
+            "type": "table",
+            "widths": [
+              0.23,
+              0.77
+            ],
+            "rows": [
+              [
+                "Rule",
+                "Implemented interpretation"
+              ],
+              [
+                "Laboratory gate",
+                "Every required scenario/configuration needs current-build evidence, an accepted-quality declaration, at least 30 trials and at least 95% successful responses. Exact integer cross multiplication avoids rounding the success percentage."
+              ],
+              [
+                "Field gate",
+                "Each configuration needs current-build evidence, complete and comparable cohorts, enabled safeguards, no serious-event flag, at least 1,000 engaged miles in each cohort, and no increase in event rate."
+              ],
+              [
+                "Failure priority",
+                "A serious-event flag or inactive safeguard fails immediately, even when exposure or comparability is poor. Otherwise poor quality, low exposure or incomparable cohorts remain inconclusive."
+              ],
+              [
+                "Decision gate",
+                "An assigned independent reviewer, non-zero rationale hash, no open actions and all required checks are necessary. Decisions expire within at most 30 days."
+              ],
+              [
+                "Uncertainty states",
+                "Missing means no required record; stale means an old build revision; inconclusive means insufficient quality or exposure; failed means a violated rule. Eligible means available for reviewer assessment."
+              ]
+            ]
+          },
+          {
+            "type": "diagram",
+            "name": "activity",
+            "caption": "UML activity view of the field-review path. Schema/build checks precede submission; contract rules govern the consequential decision."
+          },
+          {
+            "type": "p",
+            "text": "Event rate per 1,000 engaged miles = events / engaged miles x 1,000. The contract compares postEvents x baselineMiles against baselineEvents x postMiles using uint256 arithmetic. This avoids division, zero-denominator ambiguity after exposure checks, and loss of small rate differences through rounding."
+          },
+          {
+            "type": "note",
+            "text": "The numerical thresholds come from the report's illustrative workflow, not validated Tesla criteria or legal requirements. A 95% response rule may be unsuitable for critical hazards. Equal rates or zero serious events in a small sample do not establish statistical equivalence, causality or acceptable rare-event risk. Completeness and comparability remain analyst attestations requiring substantive review."
+          }
+        ]
+      },
+      {
+        "title": "A complete evidence-to-decision cycle",
+        "blocks": [
+          {
+            "type": "diagram",
+            "name": "sequence",
+            "caption": "UML sequence view. The local service selects different signers; the contract checks their assigned roles."
+          },
+          {
+            "type": "p",
+            "text": "The synthetic candidate covers HW3-enabled and HW4-enabled configurations. The engineer supplies six laboratory results, each with 39 successful responses out of 40 trials. The reviewer inspects the records, supplies a rationale and authorises limited deployment for a defined period. Installation counts alone are not an effectiveness input."
+          },
+          {
+            "type": "p",
+            "text": "The analyst then submits the report's adverse example: baseline 8 events / 4,000 miles = 2.0 per 1,000 miles; post-update 12 / 4,000 = 3.0. Recording this result invalidates current authority and creates an action owned by the candidate's engineer with a seven-day deadline. Expansion cannot be approved while the concern remains open."
+          },
+          {
+            "type": "p",
+            "text": "After the deadline, any participant may send an escalation transaction addressed to the safety lead in the event record. Improved comparable evidence can subsequently satisfy the field gate, but cannot close the action. An independent reviewer records resolution evidence and a closure rationale; a separate expansion decision then establishes authority for the new snapshot."
+          },
+          {
+            "type": "note",
+            "text": "The contract does not send notifications or transactions when time passes. Overdue status is computed on read; escalation needs a caller or production keeper. Closure records a human resolution judgment and does not itself validate that judgment. Failed release gates continue to block expansion after an action is closed."
+          }
+        ]
+      },
+      {
+        "title": "Lifecycle, invalidation and release enforcement",
+        "blocks": [
+          {
+            "type": "diagram",
+            "name": "states",
+            "caption": "UML state machine. Guards are abbreviated; the contract also checks roles, rationale and decision expiry."
+          },
+          {
+            "type": "p",
+            "text": "Every laboratory or field evidence write after a decision moves the stored stage to Reopened, including an improved result. This conservative rule requires renewed assessment whenever the decision basis changes. It is stricter than reopening only on adverse data. Closing an action likewise leaves release authority unavailable until another decision is recorded."
+          },
+          {
+            "type": "p",
+            "text": "A build revision increments buildRevision, invalidates earlier laboratory and field evidence, and resets the current build's prior-limited-decision flag. Reusing an old build hash does not revive evidence from an earlier revision. The revised build must obtain a new limited decision before its field results can be submitted."
+          },
+          {
+            "type": "p",
+            "text": "Decision expiry or revocation of the reviewing address's role removes effective authorisation without rewriting historical stage labels. A displayed Limited or Expanded stage alone is therefore insufficient. isDeploymentAuthorized checks the latest decision, current revisions, open actions, reviewer role, requested stage and validity window."
+          },
+          {
+            "type": "h",
+            "text": "Production release integration"
+          },
+          {
+            "type": "p",
+            "text": "An OTA release service would resolve the approved contract address and candidate ID, verify the actual artifact hash and configuration scope, then query authorisation for the intended deployment stage at an appropriately finalised block. It should fail closed on a missing or expired decision and recheck before distributing an artifact. Protect the release service from bypass and record its execution separately. This integration is proposed; it is not part of the local prototype."
+          },
+          {
+            "type": "note",
+            "text": "A reopened approval does not remove software from an existing vehicle, suspend a driving feature or roll back an installed remedy. It changes the assurance decision and creates a review obligation. Product-level containment still belongs to the responsible engineering and safety organisation."
+          }
+        ]
+      },
+      {
+        "title": "Validation, limitations and an adoption path",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Observed validation on 3 November 2026: 56 tests passed (48 Solidity tests and 8 Mocha tests), including 51 new assurance tests and 5 retained starter tests. The new contract includes a 256-run fuzz test for exact rate comparison. Build and TypeScript checks passed. A browser walkthrough exercised evidence submission, rejected self-approval, limited approval, adverse monitoring, overdue escalation, independent closure and expansion. These are software workflow results, not a user study or a vehicle safety outcome."
+          },
+          {
+            "type": "table",
+            "widths": [
+              0.28,
+              0.72
+            ],
+            "rows": [
+              [
+                "Risk / limitation",
+                "Required operational response"
+              ],
+              [
+                "Untruthful or selective evidence",
+                "Use trusted connectors, signed source provenance, coverage audits and independent validation. Preserve contrary findings and study limitations."
+              ],
+              [
+                "Identity and key custody",
+                "Replace role selection and server-held test keys with authenticated identities, personal signing or managed custody. Use organisational separation and protected escalation."
+              ],
+              [
+                "Admin or reviewer compromise",
+                "The immutable safety lead controls role assignments; there is no admin transfer function. Production governance needs recovery design, suitable multisignature administration and external review."
+              ],
+              [
+                "Privacy and availability",
+                "Node-readable hashes and summaries are not confidential. Keep personal records and cabin footage off-chain under encryption, access controls and retention rules; maintain recoverable preimages."
+              ],
+              [
+                "Chain or service outage",
+                "Define equivalent controlled review and reconciliation procedures. Never treat integration failure as evidence eligibility."
+              ],
+              [
+                "Scale and cost",
+                "Bounded scope keeps release checks finite. Production needs event indexing, lifecycle retention, storage-cost analysis and finality policies."
+              ]
+            ]
+          },
+          {
+            "type": "h",
+            "text": "Measure process improvement before expanding"
+          },
+          {
+            "type": "p",
+            "text": "Pilot one safeguard family. Compare missed evidence gaps, unsupported approvals, decision-reconstruction time, overdue critical actions and signal-to-qualified-triage time against a document-based baseline. Record reviewer workload, false alerts and integration effort. Do not infer reduced crashes, financial returns or effectiveness from a successful workflow demonstration."
+          },
+          {
+            "type": "h",
+            "text": "References and implementation basis"
+          },
+          {
+            "type": "p",
+            "text": "Primary problem source: supplied IS4234 Project report, sections 3-4, especially Table 5 and Table 7 (PDF pages 14-18). Its historical scope and distinctions between documented facts and proposed controls are retained. Technical references: Hardhat 3 documentation at https://hardhat.org/llms.txt; Solidity Security Considerations at https://docs.soliditylang.org/en/latest/security-considerations.html; ethers v6 hashing documentation at https://docs.ethers.org/v6/api/hashing/."
+          },
+          {
+            "type": "p",
+            "text": "Implementation differences from the report's browser-only proposal: enforce consequential rules in Solidity; use actual local signed transactions; store only hashes and necessary summaries on-chain; add expiring decisions and persistent contributor conflicts. No vehicle connector, public hosted service, legal filing workflow, recall reconciliation or real-world participant evaluation is claimed."
+          }
+        ]
+      }
+    ]
+  },
+  "guide": {
+    "title": "Safeguard",
+    "subtitle": "User guide and operating walkthrough",
+    "filename": "Safeguard_User_Guide.pdf",
+    "pages": [
+      {
+        "title": "Open the assurance workspace",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Safeguard helps an engineering owner and an independent reviewer manage release evidence, field concerns and corrective actions for a candidate Autosteer safeguard build. Open http://127.0.0.1:4234 while the local service is running. The prototype uses sample records and real transactions on an isolated local EVM. No wallet extension or paid network tokens are required."
+          },
+          {
+            "type": "h",
+            "text": "Start or restart the service"
+          },
+          {
+            "type": "code",
+            "text": "npm ci\nnpm run build\nnpm run typecheck\nnpm test\nnpm start"
+          },
+          {
+            "type": "p",
+            "text": "Run these commands in the project directory with Node.js 24 on PATH; Node 24.22.2 was used for validation. Dependencies are already installed in the provided workspace. The first build may download Solidity 0.8.34. Keep the start terminal running, then open the local link. Stop with Ctrl+C. Restarting creates a fresh candidate and chain; export evidence before stopping."
+          },
+          {
+            "type": "table",
+            "widths": [
+              0.27,
+              0.73
+            ],
+            "rows": [
+              [
+                "Workspace area",
+                "Purpose"
+              ],
+              [
+                "Active workspace role",
+                "Choose Engineer, Reviewer, Analyst, SafetyLead, SecondReviewer or Observer. The adjacent address identifies the selected test signer."
+              ],
+              [
+                "Four status cards",
+                "Read laboratory eligibility, field eligibility, open actions and effective deployment authority separately."
+              ],
+              [
+                "01 / Candidate and scope",
+                "Confirm the current build, configuration scope, revision numbers and snapshot."
+              ],
+              [
+                "02-03 / Evidence and decisions",
+                "Load or edit JSON evidence; provide a rationale and record an independent judgment."
+              ],
+              [
+                "04-07 / Coverage and history",
+                "Inspect scenario gaps, field rates, owned actions, original decisions and confirmed events."
+              ]
+            ]
+          },
+          {
+            "type": "note",
+            "text": "Access model: role selection operates prototype test accounts held by the local service. It is not production authentication. Smart-contract role checks are real, but this interface intentionally permits switching between those test identities. The service binds only to loopback and has no vehicle connection."
+          }
+        ]
+      },
+      {
+        "title": "Role workspaces and section meanings",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "The selected role changes which panels, controls and evidence samples are visible. A responsibility summary and recommended next step appear above the status cards. The role menu remembers the last selection in the current browser session. Views focus the workflow; the smart contract separately enforces transaction permissions."
+          },
+          {
+            "type": "table",
+            "widths": [
+              0.22,
+              0.78
+            ],
+            "rows": [
+              [
+                "Workspace",
+                "Visible work"
+              ],
+              [
+                "Engineer",
+                "Candidate; laboratory evidence submission and coverage; assigned investigations; decision history; build revisions. No approval or closure controls."
+              ],
+              [
+                "Safety reviewer / Second reviewer",
+                "Candidate; all required evidence; release judgments; independent action closure; decision history and review export. No evidence submission or build controls."
+              ],
+              [
+                "Field analyst",
+                "Candidate; field evidence and comparison results; safety concerns; investigation status. No laboratory table, release controls or action closure."
+              ],
+              [
+                "Safety lead",
+                "Candidate and summary gates; concern reporting; action ownership, deadlines and overdue escalation; decision history and export. No routine release or closure controls."
+              ],
+              [
+                "Auditor / observer",
+                "Candidate; all evidence; action status; decision history; confirmed event trail and export. Read-only interface."
+              ]
+            ]
+          },
+          {
+            "type": "table",
+            "widths": [
+              0.3,
+              0.7
+            ],
+            "rows": [
+              [
+                "Section",
+                "What it means"
+              ],
+              [
+                "01 / Candidate and scope",
+                "Which software build and configurations are being assessed. Revision numbers link evidence to the exact decision basis."
+              ],
+              [
+                "02 / Evidence submission",
+                "Engineer: laboratory test outcomes. Analyst: baseline and post-update field comparisons. The visible samples match the role."
+              ],
+              [
+                "03 / Decision or safety signal",
+                "Reviewer: an independent, time-limited release judgment. Analyst or safety lead: a credible concern that opens an owned investigation."
+              ],
+              [
+                "04 / Evidence assessment",
+                "The relevant scenario coverage and/or field comparisons, with reasons for missing, stale, inconclusive, failed or eligible results."
+              ],
+              [
+                "05 / Corrective actions",
+                "Who owns a concern, when it is due and how it is resolved. Reviewer sees independent closure; safety lead sees overdue escalation."
+              ],
+              [
+                "06 / Decision history",
+                "Earlier judgments and their snapshots remain visible, including after new evidence invalidates their effect."
+              ],
+              [
+                "07 / Audit trail",
+                "Auditor view of confirmed blockchain events and transaction fingerprints. Request activity is separately marked off-chain."
+              ],
+              [
+                "Lifecycle / Build revision",
+                "Engineer-only change control. Revising a build invalidates old evidence and requires renewed assessment."
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Validate the candidate and approve limited deployment",
+        "blocks": [
+          {
+            "type": "steps",
+            "items": [
+              "Start with a fresh session. Confirm candidate autosteer-2026.1 and the HW3-enabled / HW4-enabled scope in section 01. The initial laboratory gate is Missing.",
+              "Choose Engineer. In section 02 select Validation: complete scenario coverage, click Load sample and inspect the JSON. Submit evidence. Six transactions record three scenarios for each configuration.",
+              "Read section 04. Each supplied result is 39 / 40 (97.5%) and should become Eligible for reviewer assessment. The field gate is still Missing; this does not prevent a laboratory-based limited decision.",
+              "Confirm that the Engineer workspace has no release-approval controls. The scripted workflow and automated tests separately verify that a direct self-approval request is rejected by the contract. Switch to Safety reviewer for a decision.",
+              "Switch to Safety reviewer. Explain which evidence was reviewed, the remaining uncertainty and why the limited decision is justified. Select a validity period of 1, 7 or 30 days, then Approve limited deployment.",
+              "Confirm stage Limited, effective authority Limited only, and a DecisionRecorded event. The field gate remains separate. Preserve the original rationale and snapshot in the exported review package."
+            ]
+          },
+          {
+            "type": "h",
+            "text": "Inspect negative evidence cases"
+          },
+          {
+            "type": "p",
+            "text": "On a fresh session, edit one laboratory record before submitting: remove a required record to leave Missing coverage; reduce trials to 29 for Inconclusive; set 37 successes out of 40 for Failed; or change the build label to exercise a rejected stale import. A later build revision makes already-recorded results Stale. A reviewer cannot approve until every required laboratory result is eligible."
+          },
+          {
+            "type": "code",
+            "text": "Rationale example:\nReviewed current-build evidence for all required scenarios\nand configurations. Record the residual uncertainty and\nmonitoring conditions supporting limited deployment."
+          },
+          {
+            "type": "note",
+            "text": "The service requires a meaningful rationale of 10-2,000 characters. The contract requires a non-zero rationale hash and a validity window no longer than 30 days. Neither check evaluates the quality of the reviewer's reasoning. In a real workflow, rationale documents must be retained and independently inspectable."
+          }
+        ]
+      },
+      {
+        "title": "Monitor field evidence and escalate concerns",
+        "blocks": [
+          {
+            "type": "steps",
+            "items": [
+              "After a limited decision, switch to Field analyst. Load Monitoring: adverse event trend and submit it. The HW3 sample compares 8 events / 4,000 miles with 12 / 4,000 miles.",
+              "Read the field card: 2.000 becomes 3.000 events per 1,000 engaged miles. Stage becomes Reopened, effective authority becomes unavailable, and section 05 shows Action 1 assigned to the engineer with a seven-day deadline.",
+              "Try Approve expansion in the Safety reviewer workspace while the action is open. The request is rejected. Missing HW4 field data would also need to be supplied before expansion can become eligible.",
+              "Switch to Safety lead and open Prototype clock controls in section 05. Use Advance review clock 8 days. This control changes only the simulated EVM clock. Action 1 becomes Overdue; prior decisions may also have expired.",
+              "With action ID 1 selected, click Escalate overdue action. Any participant may submit this transaction. Confirm the escalated flag and ActionEscalated event. No email, vehicle command or external notification is sent.",
+              "Switch to Field analyst. Load Monitoring: follow-up evidence and submit both records. The field gate becomes eligible, but Action 1 remains open until independently closed."
+            ]
+          },
+          {
+            "type": "image",
+            "path": "output/demo/browser-open-action.png",
+            "caption": "Observed workspace state: eligible evidence can coexist with an open action and no current deployment authority. The screenshot uses sample records."
+          },
+          {
+            "type": "p",
+            "text": "Use Monitoring: insufficient exposure in a separate fresh run to see an Inconclusive field result rather than a false pass. In edited JSON, complete:false or comparable:false also remains inconclusive. An inactive safeguard or serious-event flag fails even when cohort quality is poor."
+          },
+          {
+            "type": "note",
+            "text": "Every non-eligible field submission creates an action. Repeated submissions can therefore create multiple open actions, all of which must receive independent disposition. Improved measurements never automatically close earlier concerns."
+          }
+        ]
+      },
+      {
+        "title": "Close actions, record a new decision and revise builds",
+        "blocks": [
+          {
+            "type": "steps",
+            "items": [
+              "Inspect the investigation and improved source evidence. Choose Safety reviewer, set the action ID, and enter a resolution summary in section 05. Enter the Independent closure rationale in section 05.",
+              "Click Close action independently. The reviewer cannot be the action's reporter, owner or any candidate data contributor. If the primary reviewer originally reported the concern, use Second reviewer for closure.",
+              "Confirm the action is Closed and open-action count is zero. The closure itself does not grant deployment authority. A failed or missing evidence gate still blocks expansion.",
+              "Provide a new release rationale and click Approve expansion. Confirm Expansion authorized and a second snapshot decision. This is the required separate release judgment.",
+              "To test reassessment, choose Engineer. Enter a revision rationale, keep or change the new build label autosteer-2026.2, then click Revise candidate build.",
+              "Confirm Reopened and Stale laboratory/field evidence, with earlier decisions still listed. Load the laboratory sample and edit its build to the new label before submitting. The new build needs its own limited decision before field evidence can be recorded."
+            ]
+          },
+          {
+            "type": "h",
+            "text": "Understand recorded stage versus current authority"
+          },
+          {
+            "type": "p",
+            "text": "A Limited or Expanded label records the last judgment, but expiry or reviewer-role revocation can remove its current effect. Always use the Deployment authority card and the contract's isDeploymentAuthorized query for operational eligibility. Evidence changes and action closure conservatively reopen review even when the new data improve."
+          },
+          {
+            "type": "h",
+            "text": "Respect fixed scope"
+          },
+          {
+            "type": "p",
+            "text": "The current interface works with one initialised candidate and its two fixed configurations. The contract supports multiple candidates and up to eight configurations each. To change scope or add configurations, create a new candidate through an integration or script; do not relabel existing evidence. Build revisions preserve the original scope."
+          },
+          {
+            "type": "note",
+            "text": "Do not interpret a revoked decision as an automatic rollback. This prototype governs evidence and authorisation records. It does not disable an installed feature, send an OTA package or change vehicle behaviour."
+          }
+        ]
+      },
+      {
+        "title": "Export, verify and reconstruct a review",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "In the Safety reviewer, Safety lead or Auditor / observer workspace, use Export review package to download safeguard-review.json at any stage. The package includes the current candidate and policy hash, all current evidence summaries, historical decisions, open and closed actions, canonical preimages, raw event topics/data, block identifiers and transaction hashes. Browser exports also include a clearly labelled off-chain request activity log."
+          },
+          {
+            "type": "h",
+            "text": "Run the reproducible command-line workflow"
+          },
+          {
+            "type": "code",
+            "text": "npm run demo\nnpm run verify:evidence\n\n# PowerShell: verify another exported package\n$env:REVIEW_FILE = 'C:/path/to/safeguard-review.json'\nnpm run verify:evidence"
+          },
+          {
+            "type": "p",
+            "text": "The scripted run uses its own isolated chain. It saves output/demo/review-expanded.json, review-reopened.json and walkthrough.json. The first package captures a separately approved expansion. The second captures a new build whose evidence is stale while both earlier decisions remain. The walkthrough records observed blocked attempts and successful transitions."
+          },
+          {
+            "type": "table",
+            "widths": [
+              0.32,
+              0.68
+            ],
+            "rows": [
+              [
+                "Reconstruction check",
+                "Evidence to inspect"
+              ],
+              [
+                "What was reviewed?",
+                "Build and scope hashes; ordered configurations; current and historical LabRecorded / FieldRecorded inputs."
+              ],
+              [
+                "Who decided, when and why?",
+                "Decision reviewing address, decidedAt, validity window, snapshot and rationale hash; corresponding canonical rationale text."
+              ],
+              [
+                "Why did review reopen?",
+                "Evidence revisions, BuildRevised / ReviewReopened / ActionOpened events and subsequent closure records."
+              ],
+              [
+                "Was content altered?",
+                "Recompute Keccak-256 of retained canonical UTF-8 preimages; independently recompute the snapshot using ABI encoding."
+              ],
+              [
+                "Was the ledger authentic?",
+                "Compare chain identity, approved contract address, transaction inclusion and event data with a trusted node or archived chain. A self-consistent JSON file alone does not establish provenance."
+              ]
+            ]
+          },
+          {
+            "type": "note",
+            "text": "The verification command checks internal package fingerprints, the current snapshot and historical evidence preimages. It does not validate measurement truth or independently prove blockchain inclusion. Local chain state is discarded at shutdown; retain exports, and use persistent independently governed infrastructure for operational assurance."
+          },
+          {
+            "type": "p",
+            "text": "Rejected transaction estimates do not produce confirmed contract events. The local request log helps explain those attempts but is not a tamper-resistant audit source. Earlier successful transactions in a multi-record import are not rolled back if a later record fails."
+          }
+        ]
+      },
+      {
+        "title": "Acceptance results and a five-minute walkthrough",
+        "blocks": [
+          {
+            "type": "table",
+            "widths": [
+              0.33,
+              0.67
+            ],
+            "rows": [
+              [
+                "Acceptance scenario",
+                "Observed result"
+              ],
+              [
+                "Missing or wrong-version result",
+                "Missing gate blocks approval; wrong-build import rejects; changed-build records become stale."
+              ],
+              [
+                "Failed result / low exposure",
+                "Failed and Inconclusive are distinguished; neither permits expansion."
+              ],
+              [
+                "Submitter self-approval",
+                "Rejected by role checks; contributor conflict also persists across later role reassignment."
+              ],
+              [
+                "Missing rationale",
+                "Empty rationale rejected; no affirmative decision recorded."
+              ],
+              [
+                "Adverse signal after approval",
+                "Effective authority revoked; action has an owner and due date."
+              ],
+              [
+                "Action overdue",
+                "Overdue status visible; explicit escalation transaction records safety-lead escalation."
+              ],
+              [
+                "Improved evidence",
+                "Action remains open; independent closure and a separate release decision are necessary."
+              ],
+              [
+                "Review export",
+                "Inputs, source fingerprints, rule hash, decisions and action events retained for inspection."
+              ]
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Automated results: 56 passing tests, including 45 new Solidity tests and six new integration tests. The retained Counter sample contributes five tests. Rate-comparison fuzzing executed 256 cases in its test. The browser workflow was separately exercised on the local service. These results demonstrate implemented workflow behaviour; no participant study or vehicle safety result was conducted."
+          },
+          {
+            "type": "h",
+            "text": "Suggested walkthrough sequence"
+          },
+          {
+            "type": "steps",
+            "items": [
+              "0:00-0:45: Explain the evidence-to-accountability gap. Show missing coverage and a blocked decision.",
+              "0:45-1:40: Submit six lab records, show that engineer approval controls are absent, then record an independent limited decision.",
+              "1:40-2:40: Submit adverse field evidence. Explain the 2.0 to 3.0 rate increase, reopened review and owned action.",
+              "2:40-3:40: Advance time, escalate, submit follow-up data and show that the action stays open.",
+              "3:40-5:00: Close independently, approve expansion separately, revise the build and export the preserved decision history."
+            ]
+          },
+          {
+            "type": "note",
+            "text": "The source report lists planned acceptance tests. The results above are observed in this implementation. A narrated backup walkthrough is supplied as G21_Demonstrator_Demo.mp4 and runs for 4 minutes 46 seconds. The presenter guide links the native Google Slides deck and live-demo cues. An accessible hosted prototype link remains required: the loopback address is not a hosted deliverable. No real-vehicle safety result or participant study is claimed."
+          }
+        ]
+      },
+      {
+        "title": "Troubleshooting and developer reference",
+        "blocks": [
+          {
+            "type": "table",
+            "widths": [
+              0.31,
+              0.69
+            ],
+            "rows": [
+              [
+                "Symptom",
+                "Action"
+              ],
+              [
+                "Page does not load",
+                "Keep npm start running and open the printed loopback URL. If port 4234 is occupied, use another PORT value and the matching URL."
+              ],
+              [
+                "Unauthorized",
+                "Use Engineer for laboratory/build changes, Analyst for field data, and Reviewer for release/closure judgments. Observer has no evidence write permission."
+              ],
+              [
+                "SeparationOfDuties",
+                "Use a reviewer who never contributed candidate data. A concern's reporter also cannot close that action; SecondReviewer is available."
+              ],
+              [
+                "GateBlocked or OpenActions",
+                "Read every configuration row and field explanation. Supply current evidence, investigate concerns, close actions independently and make a separate decision."
+              ],
+              [
+                "Wrong build / stale evidence",
+                "Match the exact current build label in JSON. Existing data from an earlier build revision cannot satisfy the current build, even if an old label is reused."
+              ],
+              [
+                "New-build field import rejected",
+                "First submit the new build's laboratory results and obtain its own limited decision."
+              ],
+              [
+                "Overdue escalation rejected",
+                "Escalation requires time strictly after the due date and an open, not-yet-escalated action."
+              ],
+              [
+                "Old labels remain in an open browser",
+                "Refresh the page and chain state after a service restart. Candidate metadata is loaded at session creation; changing a source JSON file does not rewrite existing chain state."
+              ]
+            ]
+          },
+          {
+            "type": "h",
+            "text": "Repository map"
+          },
+          {
+            "type": "p",
+            "text": "contracts/SafeguardAssurance.sol contains the workflow. contracts/SafeguardAssurance.t.sol holds unit and fuzz tests. test/SafeguardAssurance.ts covers off-chain orchestration. scripts/lib/prototype.ts defines validation, canonical hashes and exports; scripts/serve.ts hosts the local workspace. data/ contains sample inputs; web/ contains the interface. ignition/modules/SafeguardAssurance.ts supplies a declarative deployment module. The original Counter example is retained separately."
+          },
+          {
+            "type": "h",
+            "text": "Documentation and deployment"
+          },
+          {
+            "type": "p",
+            "text": "The solution design explains GRC fit, users, rules and implementation limits. Six editable PlantUML sources and rendered SVG views are in docs/uml/. Documentation source is docs/content.json; scripts/build-docs.py regenerates HTML and PDF outputs with the packages in docs/requirements-docs.txt. The application itself needs no Python."
+          },
+          {
+            "type": "code",
+            "text": "npx hardhat ignition deploy `\n  ignition/modules/SafeguardAssurance.ts `\n  --network hardhatMainnet"
+          },
+          {
+            "type": "note",
+            "text": "The Ignition module deploys the contract with account 0 as safety lead; it does not seed roles or a candidate. The browser service and scripted workflow initialise their own independent simulated chain. Production deployment requires separately designed authentication, evidence storage, network governance, recovery and release-system enforcement."
+          }
+        ]
+      }
+    ]
+  }
+}

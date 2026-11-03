@@ -1,0 +1,25 @@
+@startuml
+actor Engineer
+actor Reviewer
+participant "UI / signer service" as App
+participant "Assurance contract" as Contract
+actor Analyst
+Engineer -> App : import six lab records
+App -> Contract : recordLab x6 [Engineer signer]
+Reviewer -> App : rationale + expiry
+App -> Contract : approveLimited [Reviewer signer]
+Contract --> App : DecisionRecorded(snapshot)
+Analyst -> App : 8/4000 baseline, 12/4000 post
+App -> Contract : recordField [Analyst signer]
+Contract -> Contract : invalidate decision; evaluate rate
+Contract --> App : ReviewReopened + ActionOpened
+Analyst -> App : improved field comparison
+App -> Contract : recordField [Analyst signer]
+note right of Contract : Action stays open
+Reviewer -> App : resolution + closure rationale
+App -> Contract : closeAction
+note right of Contract : No release authority yet
+Reviewer -> App : separate expansion judgment
+App -> Contract : approveExpansion
+Contract --> App : DecisionRecorded(new snapshot)
+@enduml

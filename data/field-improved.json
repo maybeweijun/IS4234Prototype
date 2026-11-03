@@ -1,0 +1,9 @@
+{
+  "kind": "field",
+  "synthetic": true,
+  "build": "autosteer-2026.1",
+  "records": [
+    { "configuration": "HW3-enabled", "baselineEvents": 8, "baselineMiles": 4000, "postEvents": 6, "postMiles": 4000, "complete": true, "comparable": true, "safeguardsEnabled": true, "seriousEvent": false, "source": "synthetic-field-HW3-improved-r2" },
+    { "configuration": "HW4-enabled", "baselineEvents": 8, "baselineMiles": 4000, "postEvents": 4, "postMiles": 4000, "complete": true, "comparable": true, "safeguardsEnabled": true, "seriousEvent": false, "source": "synthetic-field-HW4-improved-r1" }
+  ]
+}

@@ -1,0 +1,54 @@
+@startuml
+hide methods
+class Candidate {
+  engineer : address
+  buildHash : bytes32
+  scopeHash : bytes32
+  buildRevision : uint64
+  evidenceRevision : uint64
+  openActions : uint64
+  stage : Stage
+  limitedEver : bool
+}
+class LabEvidence {
+  buildRevision : uint64
+  submitter : address
+  trials / successes : uint32
+  accepted : bool
+  digest : bytes32
+}
+class FieldEvidence {
+  buildRevision : uint64
+  submitter : address
+  events / miles : uint64
+  quality / activation flags : bool
+  digest : bytes32
+}
+class Decision {
+  stage : Stage
+  reviewer : address
+  buildRevision / evidenceRevision
+  snapshotHash / rationaleHash : bytes32
+  decidedAt / validUntil : uint64
+}
+class Action {
+  candidateId : uint256
+  owner / reporter / closedBy : address
+  openedAt / dueAt : uint64
+  reason : Reason
+  closed / escalated : bool
+  resolutionHash / closureRationaleHash
+}
+class SafeguardAssurance {
+  safetyLead : immutable address
+  roles : mapping(address => Role)
+  contributors : persistent mapping
+  RULE_HASH : constant bytes32
+}
+SafeguardAssurance "1" o-- "0..*" Candidate
+Candidate "1" o-- "0..24 current" LabEvidence : configuration + scenario
+Candidate "1" o-- "0..8 current" FieldEvidence : configuration
+Candidate "1" o-- "0..* append-only" Decision
+Candidate "1" o-- "0..*" Action
+note bottom of Candidate : Selected fields shown; nested input structs flattened.\nEvents preserve superseded evidence. Decisions cannot be edited.
+@enduml

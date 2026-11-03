@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="480" height="270" preserveAspectRatio="xMinYMin meet" viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="480" height="270"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-270)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="15" y="195" width="110" height="40" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="58.335" y="217" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,434) scale(1,-1)">Draft</text>
+			<rect x="185" y="195" width="110" height="40" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="222.22" y="217" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,434) scale(1,-1)">Limited</text>
+			<rect x="355" y="195" width="110" height="40" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="386.105" y="217" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,434) scale(1,-1)">Expanded</text>
+			<rect x="185" y="35" width="110" height="55" rx="5" ry="5" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,95%,93%); fill-rule: evenodd;"/>
+			<text x="215.82999999999998" y="72" style="font-family: Helvetica-Bold; font-size: 10px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,144) scale(1,-1)">Reopened</text>
+			<path d="M 185,63 L 295,63 Z" style="stroke: rgb(72%,80%,76%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="194" y="47" style="font-family: Helvetica; font-size: 8px;fill: rgb(9%,18%,20%); stroke:none;" transform="translate(0,94) scale(1,-1)">No current authority</text>
+			<circle cx="25" cy="256" r="4" style="stroke: rgb(9%,18%,20%); stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,18%,20%); fill-rule: evenodd;"/>
+			<path d="M 25,252 L 55,235 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="55 235, 51.58621 239.9342, 49.01289 235.393" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<path d="M 125,215 L 185,215 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="185 215, 179.5973 217.6098, 179.5973 212.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="133.548" y="227" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,454) scale(1,-1)">lab + review</text>
+			<path d="M 295,215 L 355,215 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="355 215, 349.5973 217.6098, 349.5973 212.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="301.548" y="227" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,454) scale(1,-1)">field + review</text>
+			<path d="M 240,195 L 240,90 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="240 90, 242.6098 95.40268, 237.3902 95.40268" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="262.316" y="150" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,300) scale(1,-1)">change / concern</text>
+			<path d="M 410,195 L 295,90 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="295 90, 300.7495 91.71557, 297.2301 95.57016" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="376.316" y="137" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,274) scale(1,-1)">change / concern</text>
+			<path d="M 185,62 L 155,62 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 155,62 L 155,195 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 155,195 L 185,195 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="185 195, 179.5973 197.6098, 179.5973 192.3902" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="69.332" y="118" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,236) scale(1,-1)">New limited</text>
+			<text x="73.548" y="107" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,214) scale(1,-1)">judgment</text>
+			<path d="M 295,62 L 457,62 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 457,62 L 457,185 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 457,185 L 435,195 Z" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="435 195, 438.8385 190.3885, 440.9984 195.1402" style="stroke: rgb(7%,40%,36%); stroke-linecap: butt; stroke-width: 0.4; fill: rgb(7%,40%,36%); fill-rule: evenodd;"/>
+			<text x="326.86" y="36" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,72) scale(1,-1)">Separate expansion judgment</text>
+			<text x="320.64" y="25" style="font-family: Helvetica; font-size: 8px;fill: rgb(38%,46%,44%); stroke:none;" transform="translate(0,50) scale(1,-1)">[eligible evidence; actions closed]</text>
+		</g>
+	</g>
+</svg>

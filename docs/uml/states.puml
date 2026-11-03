@@ -1,0 +1,13 @@
+@startuml
+[*] --> Draft
+Draft --> Draft : evidence supplied / revised
+Draft --> Limited : approveLimited [labs eligible; no open actions; independent reviewer]
+Limited --> Expanded : approveExpansion [labs + field eligible; no open actions]
+Limited --> Reopened : evidence / build change or concern
+Expanded --> Reopened : evidence / build change or concern
+Reopened --> Reopened : improved data / action closure
+Reopened --> Limited : new limited decision [labs eligible; no open actions]
+Reopened --> Expanded : separate expansion decision [current build had limited decision; labs + field eligible; no open actions]
+note right of Reopened : Every material evidence mutation invalidates approval.\nBuild revision makes old evidence stale and resets limitedEver.\nHistory is retained.
+note bottom of Expanded : Expiry / reviewer-role revocation removes effective authority\nwithout rewriting the recorded stage.\nDeployment requires isDeploymentAuthorized == true.
+@enduml

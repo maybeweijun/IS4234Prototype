@@ -1,0 +1,180 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Safeguard presenter guide</title><style>body{margin:0;background:#f4f5f1;color:#172e34;font:15px/1.75 Segoe UI,Arial,sans-serif}header{background:#142e33;color:white;padding:35px 7%}main{max-width:1050px;margin:auto;padding:25px 5%}section{padding:28px;background:white;border:1px solid #d6e2da;border-radius:6px;margin:25px 0}h1,h2{font-family:Georgia,serif}h2{font-size:28px}h3,a{color:#14665d}table{width:100%;border-collapse:collapse}th,td{padding:12px;text-align:left;vertical-align:top;border-bottom:1px solid #d6e2da;font-size:13px}th{background:#edf4ee}pre,aside{white-space:pre-wrap;background:#edf4ee;padding:18px}details{margin:18px 0;padding:12px;border-bottom:1px solid #d6e2da}summary{cursor:pointer;font-weight:600}small{color:#617672}li{margin-bottom:12px}</style></head><body><header><h1>Safeguard presenter guide</h1><p>24 slides: 18 main slides and 6 appendices. Plan for 23.5 minutes including a five-minute live demo, followed by ten minutes of Q&amp;A.</p></header><main>
+<section><h2>Start the live demonstration</h2><pre>npm start
+http://127.0.0.1:4234</pre><p>Run from the project directory. Keep the terminal running. Rehearse in a fresh session because restarting clears the local chain. Keep the main prototype on port 4234; port 4235 was used only to capture the recorded walkthrough without changing your working session.</p><p><a href="../output/presentation/G21_Safeguard_Presentation.pptx">Editable PowerPoint</a> / <a href="../output/presentation/G21_Safeguard_Presentation.pdf">PDF reference</a> / <a href="../output/demo/G21_Demonstrator_Demo.mp4">Narrated backup video</a></p></section>
+<section><h2>Five-minute live demo</h2><table><tr><th>Time</th><th>Role</th><th>Action</th><th>Point to explain</th></tr><tr><td>0:00-1:00</td><td>Engineer</td><td>Show missing coverage, then load Validation: complete scenario coverage and submit six records.</td><td>Laboratory evidence becomes eligible. No approval controls are shown to Engineer.</td></tr><tr><td>1:00-1:45</td><td>Safety reviewer</td><td>Provide a meaningful rationale and approve limited deployment.</td><td>Limited only authority and an attributable snapshot decision.</td></tr><tr><td>1:45-2:45</td><td>Field analyst</td><td>Load Monitoring: adverse event trend and submit.</td><td>2.0 becomes 3.0 events per 1,000 miles. Review reopens and an engineer-owned action appears.</td></tr><tr><td>2:45-3:30</td><td>Safety lead</td><td>Open Prototype clock controls, advance eight days and escalate Action 1.</td><td>Overdue and escalated status is recorded.</td></tr><tr><td>3:30-4:20</td><td>Analyst, then reviewer</td><td>Submit follow-up field evidence. Enter resolution evidence and an independent closure rationale.</td><td>Improved data leaves the action open; closure still leaves release authority unavailable.</td></tr><tr><td>4:20-5:00</td><td>Reviewer, engineer, observer</td><td>Approve expansion separately, revise the build and inspect/export the history.</td><td>The new build makes old results stale while original decisions remain inspectable.</td></tr></table><h3>Rationales to adapt</h3><pre>Limited decision:
+Reviewed current-build validation for every required scenario and configuration. Record residual uncertainty and monitoring conditions supporting limited deployment.
+
+Closure:
+Independent assessment of the investigation and follow-up evidence supports closure of this concern. A separate release judgment is still required.
+
+Build revision:
+A material safeguard change requires fresh evidence and a new independent decision for the revised build.</pre><aside>The backup video is a narrated sequence of observed workflow states, using synthetic records. Its verified duration is 286.39 seconds, or 4 minutes 46 seconds. Play it instead of the live segment if needed, rather than adding both segments to the timed presentation.</aside></section>
+<section><h2>Google Slides import</h2><p>The native Google Slides deck is saved and checked: <a href="https://docs.google.com/presentation/d/1PC1o1sp7kFBUP2rKyjpvXB2EwgMb8WNTyfCmv0PcLdQ/edit">Safeguard Autosteer Assurance - Group 21</a>. All 24 slides include ready-to-read scripts, with presenter handovers and live-demo cues. The cover, table, screenshot, architecture diagram and imported notes were inspected after conversion.</p><ol><li>Sign in to Google Drive and upload G21_Safeguard_Presentation.pptx.</li><li>Open the uploaded file with Google Slides.</li><li>Choose File &gt; Save as Google Slides to create a native copy.</li><li>Check all 24 slides, speaker notes, the editable architecture diagram and tables after conversion.</li></ol><p><a href="https://support.google.com/docs/answer/9310378?hl=en">Google's official conversion instructions</a></p><p>The PDF is a visual reference. The backup video can be played as a local MP4 or separately uploaded to Drive. The Google Slides layout and speaker scripts have been checked. The backup MP4 is a separate local video; embedded-audio conversion is not part of the main deck.</p></section>
+<section><h2>Submission readiness</h2><table><tr><th>Requirement</th><th>Status</th></tr><tr><td>Presentation and demo within 25 minutes</td><td>23.5-minute main-deck plan, including a five-minute live segment. Six appendices sit outside the timed content.</td></tr><tr><td>Substantive team contributions</td><td>Suggested allocation in slide 22. Adjust it to actual contributions and rehearse handovers.</td></tr><tr><td>Backup MP4 of no more than five minutes</td><td>Created and verified at 4 minutes 46 seconds with a stereo audio track.</td></tr><tr><td>Guide longer than two pages</td><td>Eight-page guide, with roles, access instructions, sample data, workflow and limits.</td></tr><tr><td>Hosted accessible prototype link</td><td>Still required. The loopback address only works on the machine running the server. Update the guide with the hosted link after deployment.</td></tr><tr><td>Google Slides deck</td><td>Created and saved in Google Slides. All 24 slides and their spoken scripts were checked. An editable PowerPoint copy is also available.</td></tr><tr><td>AI acknowledgement</td><td>Included in the final appendix. Review it to reflect the team's actual use.</td></tr></table><p>Specification deadlines: slides by 8 November 2026 at 23:59; report and prototype package by 13 November 2026 at 23:59. Source: supplied project specification, pages 5-8.</p></section>
+<section><h2>Ready-to-read speaker scripts</h2><details><summary>1. Autosteer safeguard assurance</summary><p><small>0.5 min / Chen Junyao</small></p><pre>Good afternoon. We are Group 21, and our project examines Tesla&#x27;s Autosteer safeguards and the governance of its corrective software updates.
+
+Our proposed product, Safeguard, connects safety evidence to accountable release decisions. We will explain the case, analyse the GRC weaknesses, and demonstrate how the prototype supports independent review and corrective action.</pre><p><small>Sources: Supplied project report, sections 1 and 4; Supplied project specification, pages 5-7</small></p></details><details><summary>2. The assurance question</summary><p><small>1 min / Chen Junyao</small></p><pre>Our central question is: how should evidence of foreseeable driver misuse shape release and corrective-action decisions?
+
+The scope is Tesla&#x27;s Autosteer safeguards in the United States. Autosteer operates as part of a Level 2 driver-assistance system, so continuous driver supervision remains essential. That makes the adequacy of the safeguards supporting supervision a critical assurance question.
+
+Our core period runs from August 2021 to April 2024. We identify the May 2024 information request as follow-up evidence, rather than treating it as information available when the December remedy was released. We also exclude wider Full Self-Driving controversies and unrelated recalls. This gives us a defined product, a defined safety claim and a defined decision process to examine.</pre><p><small>Sources: Supplied project report, sections 1-2</small></p></details><details><summary>3. Investigation and remedy chronology</summary><p><small>1.5 min / Chen Junyao</small></p><pre>There are four developments to highlight in the chronology.
+
+First, the preliminary investigation began in August 2021. It was expanded into an engineering analysis in June 2022, with further attention to driver engagement and human factors.
+
+In December 2023, Tesla filed Recall 23V838, covering approximately 2.03 million US vehicles, and delivered additional safeguards through an over-the-air software remedy.
+
+In April 2024, NHTSA closed that engineering analysis while opening a recall query to assess the remedy&#x27;s adequacy. That combination matters. Completing the original investigation and distributing a remedy did not settle the separate question of whether the remedy adequately addressed the underlying concern.
+
+We should also be precise about the evidence: opening a query warranted further investigation. It did not establish that every part of the remedy had failed.</pre><p><small>Sources: https://static.nhtsa.gov/odi/rcl/2023/RCLRPT-23V838-8276.PDF; https://static.nhtsa.gov/odi/inv/2022/INCLA-EA22002-14498.pdf; https://static.nhtsa.gov/odi/inv/2024/INOA-RQ24009-12046.pdf</small></p></details><details><summary>4. Existing safeguards and the evidence gap</summary><p><small>1.25 min / Chen Junyao</small></p><pre>Tesla already had engagement monitoring, driver warnings and restrictions. The remedy strengthened or added controls, so the issue was their adequacy and operation.
+
+For example, a warning can trigger correctly without producing an appropriate driver response. An update can also be installed while an optional safeguard is disabled or later reversed. This means installation, activation, driver behaviour and safety outcomes answer different questions.
+
+The assurance process must connect those questions to the actual software version and vehicle configuration being considered. It must also recognise trade-offs, including false alerts, privacy concerns and restrictions on legitimate use.
+
+That is why our product focuses on the evidence supporting a decision, rather than treating deployment completion as proof of effectiveness. Christopher will now explain the root cause and the GRC implications.</pre><p><small>Sources: https://static.nhtsa.gov/odi/rcl/2023/RCLRPT-23V838-8276.PDF; https://static.nhtsa.gov/odi/inv/2024/INIM-RQ24009-12199.pdf</small></p></details><details><summary>5. Root cause and the GRC challenge</summary><p><small>1.5 min / Chong Jia Cheng Christopher</small></p><pre>The report&#x27;s strongest diagnosis is a mismatch between the supervision the system requires and the safeguards supporting that supervision. Foreseeable driver inattention therefore needs to be treated as a design and assurance consideration.
+
+The associated GRC challenge is ensuring that the combined evidence supports an accountable judgment. Engineering may confirm that software behaves as specified. Validation may complete its test plan. Compliance may check reporting records. Those activities do not automatically establish that the same safety claim has been adequately demonstrated.
+
+A release authority needs to understand the configuration gaps, contrary findings and remaining uncertainty before accepting residual risk. Significant disagreements must remain visible and have a route for escalation.
+
+We are not claiming that public records reveal precisely how Tesla&#x27;s internal approval process broke down. The fragmentation risk is our analytical implication from the case. Our recommendation is to make ownership and the basis of each decision explicit.</pre><p><small>Sources: https://static.nhtsa.gov/odi/inv/2022/INCLA-EA22002-14498.pdf; Supplied project report, sections 3.1-3.6</small></p></details><details><summary>6. Frameworks clarify different responsibilities</summary><p><small>1.25 min / Chong Jia Cheng Christopher</small></p><pre>We use three perspectives to organise that analysis.
+
+COSO helps us ask whether authority, risk assessment, evidence requirements and monitoring operate as a coherent control process. A dashboard alone would not address a weak control environment or a lack of authority to challenge delivery decisions.
+
+The Three Lines Model clarifies responsibilities. Engineering retains operational ownership. Safety and compliance specialists provide challenge. Internal audit assesses whether the process works, rather than routinely approving releases it may later audit.
+
+ISO 21448&#x27;s published scope adds a complementary perspective on functional insufficiency and reasonably foreseeable misuse.
+
+These frameworks have limits. They do not supply our numerical prototype thresholds, prove Tesla adopted a particular framework, or establish certification. We use them to structure the questions and responsibilities while retaining qualified engineering and safety judgment.</pre><p><small>Sources: Supplied project report, section 3.3; https://www.theiia.org/globalassets/site/about-us/advocacy/three-lines-model-updated.pdf; https://www.iso.org/standard/77490.html</small></p></details><details><summary>7. Regulatory duties and internal assurance</summary><p><small>1.25 min / Chong Jia Cheng Christopher</small></p><pre>The regulatory obligations and our proposed internal controls need to be distinguished.
+
+The report discusses defect notification and remedy obligations under US motor vehicle safety law, alongside recall reporting and campaign records. It also explains why later safety-related changes may require further assessment of the original remedy and its regulatory treatment.
+
+Our evidence gates, independent approvals and corrective-action workflow are proposed internal controls supporting responsible decisions. They are not a claim that legislation prescribes this exact application or these exact thresholds.
+
+This distinction also explains our implementation scope. Legal safety-change classification and recall-campaign reconciliation remain supporting organisational controls. The prototype concentrates on the evidence and decisions surrounding safeguard assurance. It does not make a legal determination, submit a filing to NHTSA or certify regulatory compliance. Those responsibilities still require competent people and authoritative records.</pre><p><small>Sources: https://www.govinfo.gov/content/pkg/USCODE-2022-title49/html/USCODE-2022-title49-subtitleVI-partA-chap301.htm; Supplied project report, section 3.4</small></p></details><details><summary>8. Four controls make the decision accountable</summary><p><small>1.25 min / Chong Jia Cheng Christopher</small></p><pre>The proposed response is expressed through four controls from the report.
+
+C2 requires relevant, current evidence for the required scenarios and configurations. Missing or inadequate evidence must have a consequence for the decision.
+
+C3 requires an independent reviewer to record a reasoned release judgment. This makes acceptance of residual uncertainty attributable.
+
+C4 requires reassessment when the software build or supporting evidence materially changes. An old approval should not silently continue to apply to a different decision basis.
+
+C5 requires adverse signals to produce owned follow-up, a due date, escalation and independent closure. Better data alone should not make an earlier concern disappear.
+
+Together, these controls connect the case analysis to testable operations. The next part shows how Safeguard implements them. Wei Jun will introduce the users, architecture and review rules before our demonstration.</pre><p><small>Sources: Supplied project report, section 4.2, Table 5; contracts/SafeguardAssurance.sol</small></p></details><details><summary>9. Role-specific workspaces</summary><p><small>1 min / Tan Wei Jun</small></p><pre>Safeguard presents a focused workspace for each responsibility.
+
+The engineer submits validation evidence, investigates assigned concerns and records material build changes. The field analyst supplies post-update comparisons and can report a credible concern.
+
+The safety reviewer inspects evidence, makes release judgments and independently closes actions. The safety lead monitors ownership, deadlines and escalation. The auditor has a read-only view for reconstructing decisions and exporting the record.
+
+Shared candidate information keeps these users aligned, while irrelevant controls are hidden to reduce confusion. Regulators can receive reviewed evidence packages without becoming routine internal release approvers. In this prototype, the role picker selects test identities. Actual transaction permissions are still checked by the smart contract.</pre><p><small>Sources: web/index.html; web/app.js; contracts/SafeguardAssurance.sol</small></p></details><details><summary>10. A shared record of evidence and decisions</summary><p><small>1.25 min / Tan Wei Jun</small></p><pre>This diagram separates the interface, transaction service, contract and evidence storage.
+
+The browser sends a request to the signer service. The service uses ethers to submit a signed transaction to the Solidity registry on a local Hardhat EVM. The registry checks the rules and records the evidence revision, reviewing address and resulting events. Source documents and canonical evidence records stay off-chain.
+
+The potential blockchain benefit is a common record that independently governed participants can verify. It reduces exclusive reliance on one operator&#x27;s editable database. However, a conventional application with signed, append-only logs could provide similar workflow controls when one trusted operator is sufficient.
+
+Our local network demonstrates the contract behaviour. Production trust would require independent network governance, authenticated signing and protected evidence storage. A real release service would also have to enforce the contract&#x27;s current decision before distributing software.</pre><p><small>Sources: scripts/lib/prototype.ts; scripts/serve.ts; contracts/SafeguardAssurance.sol; https://docs.soliditylang.org/en/latest/security-considerations.html</small></p></details><details><summary>11. Demonstration rules preserve uncertainty</summary><p><small>1.25 min / Tan Wei Jun</small></p><pre>The rules deliberately preserve uncertainty instead of converting missing information into a pass.
+
+For laboratory evidence, every required scenario and configuration needs accepted results for the current build. The illustrative policy requires at least thirty trials and ninety-five percent successful responses.
+
+For field evidence, both cohorts need sufficient exposure, complete and comparable data, active safeguards and no serious-event flag. The selected event rate must not increase.
+
+A release judgment additionally requires an independent reviewer, a rationale, no open actions and a validity period of no more than thirty days.
+
+These are demonstration rules taken from the report&#x27;s proposed workflow. They are not Tesla criteria, legal thresholds or validated safety requirements. Passing means eligible for reviewer assessment. It does not establish that rare harm is acceptably unlikely. We will now demonstrate how those distinctions affect the decision process.</pre><p><small>Sources: Supplied project report, section 4.5; contracts/SafeguardAssurance.sol</small></p></details><details><summary>12. Live demonstration</summary><p><small>5 min / All four presenters</small></p><pre>[LIVE DEMO: five minutes. Bracketed directions are actions, not spoken text. Start with a fresh local session and the initial build.]
+
+[0:00-1:00 | Junyao | Engineer: show the initial missing coverage. Load Validation: complete scenario coverage and submit.]
+
+Junyao: This is the proposed Autosteer software release under review. Each required scenario and configuration needs evidence. As Engineer, I can submit results and revise the build, but I cannot approve my own release. These six records now satisfy the laboratory rules.
+
+[1:00-1:45 | Christopher | Safety reviewer: enter a meaningful rationale and approve limited deployment.]
+
+Christopher: I review the evidence independently and record why a limited decision is justified, including its expiry. The decision is tied to the current build and evidence snapshot. Field effectiveness remains a separate question.
+
+[1:45-2:45 | Wei Jun | Field analyst: submit Monitoring: adverse event trend. Show the rates and reopened status.]
+
+Wei Jun: The baseline has eight events over four thousand engaged miles. The post-update sample has twelve over four thousand. The rate increases from two to three per one thousand miles. Review reopens, current authority is removed and an action is assigned to the engineer.
+
+[2:45-3:30 | Justin | Safety lead: open Prototype clock controls, advance eight days and escalate Action 1.]
+
+Justin: The concern has an owner and a seven-day deadline. Advancing the local test clock lets us demonstrate overdue follow-up. This separate transaction records escalation for the safety lead.
+
+[3:30-4:20 | Wei Jun: submit Monitoring: follow-up evidence. Christopher: enter resolution evidence and the independent closure rationale, then close Action 1.]
+
+Wei Jun: The improved evidence now satisfies the field rules, but the action stays open.
+
+Christopher: I assess the investigation independently and record the closure rationale. Closure still does not grant release authority.
+
+[4:20-5:00 | Christopher: approve expansion separately. Junyao: revise the build. Justin: switch to Auditor / observer and inspect or export history.]
+
+Christopher: A separate judgment is required before expansion.
+
+Junyao: Changing the build makes the earlier evidence stale, so the old approval cannot carry over silently.
+
+Justin: The original decisions remain inspectable. I will now explain the observed results and the implementation limits.
+
+[If the live workflow fails, play the backup MP4 instead of repeating the live segment. Do not add both demos to the timed presentation.]</pre><p><small>Sources: Implemented prototype; Supplied project specification, pages 5-7</small></p></details><details><summary>13. An adverse result changes the decision state</summary><p><small>0.5 min / Justin Chan Wee Hsien</small></p><pre>This screenshot summarises the adverse-result step using synthetic data. Eight events over four thousand miles gives a rate of two per one thousand miles. Twelve over the same exposure gives three.
+
+That difference fails the configured check, reopens review and creates an owned action. If the cohorts were not comparable, the outcome would instead remain inconclusive. In either case, the evidence cannot support an automatic expansion decision.</pre><p><small>Sources: output/demo/capture-review-reopened.json; data/field-adverse.json</small></p></details><details><summary>14. Observed validation and evaluation</summary><p><small>1 min / Justin Chan Wee Hsien</small></p><pre>The implementation passed fifty-six automated tests: forty-eight Solidity tests and eight Mocha tests. Fifty-one are new assurance tests, while five are retained starter tests.
+
+The tests cover version checks, independent review, required rationale, exact rate comparisons, escalation and separate closure and release decisions. The new rate-comparison fuzz test ran two hundred and fifty-six cases. We also exercised the browser workflow and all six role selections.
+
+These results establish the tested software behaviour, not real-world safety or production security. We did not conduct a participant study. A pilot should compare missed evidence gaps, unsupported approvals, reconstruction time and overdue actions against the existing review process. Reviewer workload and false alerts should be measured as well.</pre><p><small>Sources: output/validation/test-results.txt; contracts/SafeguardAssurance.t.sol; test/SafeguardAssurance.ts</small></p></details><details><summary>15. Feasibility depends on operating controls</summary><p><small>1.25 min / Justin Chan Wee Hsien</small></p><pre>Feasibility has several dimensions.
+
+Technically, the local prototype shows that the selected workflow can execute. Operational use would need trustworthy connectors, durable evidence storage, authenticated signing and integration with the release process.
+
+Operationally, reviewers need appropriate expertise and sufficient time. Teams also need reliable escalation and an equivalent controlled process during an outage.
+
+Organisationally, a sponsor must establish decision rights and protect independent challenge when it conflicts with delivery pressure. A well-designed interface cannot compensate for routinely ignoring adverse findings.
+
+Economically, the pilot must measure integration effort, reviewer time, maintenance and hosting costs. We have not assigned a financial return because Tesla&#x27;s internal costs and baseline error rates are unavailable. The recommendation is therefore a limited pilot with measurable review benefits, rather than immediate enterprise-wide deployment. Urgent hazard containment should continue through existing safety processes while that pilot is developed.</pre><p><small>Sources: Supplied project report, sections 4.1 and 4.7; docs/solution.html</small></p></details><details><summary>16. An accountable rollout</summary><p><small>1.25 min / Justin Chan Wee Hsien</small></p><pre>The rollout begins with accountable safety action, rather than waiting for a new platform.
+
+Immediately, safety and engineering leaders should assess urgent hazards and preserve the basis of interim-control decisions.
+
+During the first thirty days, the safety sponsor should agree approval authority, reviewer independence and minimum evidence requirements.
+
+The next stage is a pilot covering one safeguard family. The validation lead should examine scenario and configuration coverage and resolve the gaps. Engineering systems and compliance teams can then reconcile versioned records and test protected access.
+
+Wider adoption should depend on evidence that the process improves review quality and corrective-action timeliness without an unmanageable burden. Independent assurance should examine whether the process is actually followed. These periods are planning assumptions from our report. They are not a claim about a completed Tesla implementation or a guaranteed delivery schedule.</pre><p><small>Sources: Supplied project report, section 4.1, Table 4</small></p></details><details><summary>17. Trust and implementation limits</summary><p><small>1 min / Justin Chan Wee Hsien</small></p><pre>The implementation limits are important to the recommendation.
+
+A fingerprint can show whether evidence changed relative to a trusted recorded hash. It cannot establish that the original measurement was truthful or that the study was appropriate.
+
+A wallet address also does not establish human independence. Production use needs qualified identities, protected keys and organisational separation. Sensitive incident records and cabin data should remain in controlled off-chain storage.
+
+The local Hardhat network is resettable, and the current application does not control vehicles or deliver OTA updates. A protected release service must enforce current authority for the actual software artifact and scope. Our result is therefore a functioning assurance workflow with clear operational requirements, rather than a claim of regulatory approval or proven vehicle safety.</pre><p><small>Sources: docs/solution.html; Supplied project specification, pages 6-7</small></p></details><details><summary>18. Decisions should remain tied to current evidence</summary><p><small>0.5 min / Justin Chan Wee Hsien</small></p><pre>Our central recommendation is to keep every consequential software-release decision tied to current evidence and an accountable reviewer.
+
+Safeguard demonstrates how evidence gaps can block an unsupported judgment, how material changes can reopen review, and how concerns can remain owned until independently resolved. Its value depends on sound engineering and a willingness to act on the evidence.
+
+Thank you. We welcome your questions.</pre><p><small>Sources: Supplied project report, conclusions and section 4; Implemented prototype</small></p></details><details><summary>19. Demo recovery checklist</summary><p><small>Appendix</small></p><pre>[OPTIONAL BACKUP MATERIAL]
+
+If the live workflow is unavailable, we can use the recorded demonstration to show the same sequence of contract decisions. The video uses synthetic data and captured states from an actual local execution. It runs for four minutes and forty-six seconds.
+
+For a fresh live run, we start the service with npm start and open the local address. We export the evidence before stopping because restarting clears the local chain. The scripted workflow is also available to reproduce the complete decision cycle.</pre><p><small>Sources: docs/user-guide.html; Supplied project specification, page 7</small></p></details><details><summary>20. Questions to prepare for</summary><p><small>Appendix</small></p><pre>[Q&amp;A PROMPTS: use the relevant response rather than reading every answer.]
+
+Why blockchain? Its potential advantage is independent verification of a shared record. A conventional application with signed logs may be sufficient when one trusted operator is acceptable.
+
+Could a reviewer approve false evidence? Yes. The contract cannot establish whether a study is truthful or appropriate. Trusted sources, qualified review and organisational controls remain necessary.
+
+Does approval prove safety? No. Our rules establish workflow eligibility for a human judgment. They are illustrative and do not demonstrate acceptable rare-event risk.
+
+What happens when the evidence changes? Current authority is invalidated and another decision is required. Closing a concern and authorising release remain separate judgments.
+
+How would this affect actual OTA delivery? A protected deployment service would have to match the artifact and configuration scope, then enforce the current contract decision before distributing software.</pre><p><small>Sources: contracts/SafeguardAssurance.sol; Supplied project specification, pages 5-6</small></p></details><details><summary>21. Blockchain and a conventional web system</summary><p><small>Appendix</small></p><pre>[OPTIONAL RESPONSE TO THE BLOCKCHAIN COMPARISON QUESTION]
+
+A conventional web application can also enforce approval rules, hash evidence and maintain signed, append-only logs. We should not present those capabilities as unique to blockchain.
+
+The difference is the trust arrangement. With independently governed validators, participants can verify a common ordering of evidence and decisions without relying exclusively on one organisation&#x27;s database administrator. If one operator effectively controls the network, that advantage is much weaker.
+
+Both approaches still depend on reliable source evidence and qualified human judgment. The current local prototype demonstrates signed transactions and rule execution. It does not yet demonstrate a durable, independently governed production network.</pre><p><small>Sources: https://ethereum.org/developers/docs/intro-to-ethereum/; https://ethereum.org/developers/docs/smart-contracts/; https://docs.soliditylang.org/en/latest/security-considerations.html; docs/solution.html</small></p></details><details><summary>22. Suggested speaking and demo allocation</summary><p><small>Appendix</small></p><pre>[TEAM REHEARSAL NOTE: confirm this suggested allocation against actual contributions.]
+
+Junyao introduces the scope, chronology and existing controls. Christopher develops the critical GRC analysis and proposed controls. Wei Jun explains the users, architecture and analytical rules and coordinates the demo. Justin explains the observed results, feasibility and recommendations.
+
+During rehearsal, we should keep handovers brief, check the live-demo timing and make sure every member can answer questions about the full project. The main plan is twenty-three and a half minutes, leaving contingency within the twenty-five-minute limit.</pre><p><small>Sources: Group names from supplied report cover; Supplied project specification, pages 5-6</small></p></details><details><summary>23. Selected evidence and technical sources</summary><p><small>Appendix</small></p><pre>[REFERENCE SLIDE: keep available for evidence questions.]
+
+Our case evidence comes primarily from the recall report and NHTSA&#x27;s investigation and information-request records. The report develops the GRC analysis and proposed controls from those materials. We identify the historical legal edition and distinguish later follow-up evidence from information available at the original release decision.
+
+Our prototype claims are supported by source code, executed tests and retained review exports. Synthetic demonstration measurements are kept separate from historical case facts. Full source links are included below in these notes.</pre><p><small>Sources: </small></p></details><details><summary>24. AI assistance and verification</summary><p><small>Appendix</small></p><pre>[AI-USE ACKNOWLEDGEMENT: review this statement to reflect the team&#x27;s actual use.]
+
+We used ChatGPT and Codex to assist with source discovery, organisation, drafting, implementation and presentation materials. The team remains responsible for reviewing the claims, checking the evidence and understanding the prototype.
+
+We distinguish observed software results from historical Tesla evidence and do not claim a completed user study, a production deployment or a real-world safety improvement. Each presenter should be able to explain and defend the assumptions and limitations.</pre><p><small>Sources: Supplied project specification, page 8</small></p></details></section></main></body></html>

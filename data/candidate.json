@@ -1,0 +1,6 @@
+{
+  "label": "Autosteer safeguard remedy",
+  "build": "autosteer-2026.1",
+  "scope": "US Autosteer safeguard assurance: attention, mode confusion and operating boundary; HW3 and HW4 with safeguards enabled",
+  "configurations": ["HW3-enabled", "HW4-enabled"]
+}

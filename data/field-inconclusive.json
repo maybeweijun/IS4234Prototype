@@ -1,0 +1,8 @@
+{
+  "kind": "field",
+  "synthetic": true,
+  "build": "autosteer-2026.1",
+  "records": [
+    { "configuration": "HW3-enabled", "baselineEvents": 8, "baselineMiles": 4000, "postEvents": 0, "postMiles": 200, "complete": true, "comparable": true, "safeguardsEnabled": true, "seriousEvent": false, "source": "synthetic-field-HW3-insufficient-r1" }
+  ]
+}

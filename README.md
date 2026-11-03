@@ -1,57 +1,61 @@
-# Sample Hardhat 3 Project (`mocha` and `ethers`)
+# Safeguard
 
-This project showcases a Hardhat 3 project using `mocha` for tests and the `ethers` library for Ethereum interactions.
+**Blockchain-based assurance for accountable Autosteer release decisions.**
 
-To learn more about Hardhat 3, please visit the [Getting Started guide](https://hardhat.org/docs/getting-started#getting-started-with-hardhat-3). To share your feedback, join our [Hardhat 3](https://hardhat.org/hardhat3-telegram-group) Telegram group or [open an issue](https://github.com/NomicFoundation/hardhat/issues/new) in our GitHub issue tracker.
+Safeguard connects validation evidence, field monitoring, independent approvals and corrective actions to a specific software build. Built with Solidity, Hardhat 3 and ethers.js, it provides focused workspaces for engineering, safety and assurance teams.
 
-## Project Overview
+## Tesla's GRC problem
 
-This example project includes:
+The report examines **Tesla's December 2023 Autosteer recall (23V838)**. Its central problem is how Tesla should assess safeguards against **foreseeable driver misuse** and use that evidence for **accountable release and corrective-action decisions**.
 
-- A simple Hardhat configuration file.
-- Foundry-compatible Solidity unit tests.
-- TypeScript integration tests using `mocha` and ethers.js
-- Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
+Installing an OTA remedy does not establish that safeguards remain enabled, keep drivers attentive or reduce risk. The assurance process needs current evidence across software versions and vehicle configurations, independent scrutiny, clear ownership of residual risk and follow-up when post-update concerns emerge.
 
-## Usage
+## How Safeguard addresses it
 
-### Running Tests
+- **Evidence coverage:** requires accepted, current results for driver attention, mode confusion and operating boundaries across the release's configurations.
+- **Independent decisions:** reviewers record a rationale and validity period before limited deployment or expansion is authorised.
+- **Reassessment:** software or evidence revisions invalidate earlier authority while preserving the original judgment.
+- **Owned follow-up:** adverse or inconclusive field results create actions with deadlines, escalation and independent closure.
+- **Traceability:** signed transactions and evidence fingerprints preserve what supported each decision.
 
-To run all the tests in the project, execute the following command:
+These controls block unsupported approvals **within the assurance workflow**. A production release pipeline would enforce the decision before distributing software.
 
-```shell
-npx hardhat test
+## Run locally
+
+Requires **Node.js 24** and npm.
+
+```sh
+npm ci
+npm run build
+npm start
 ```
 
-You can also selectively run the Solidity or `mocha` tests:
+Open **[http://127.0.0.1:4234](http://127.0.0.1:4234)**. Keep the terminal running; `Ctrl+C` stops it. Each start creates a fresh local chain, so export records before stopping.
 
-```shell
-npx hardhat test solidity
-npx hardhat test mocha
+## User roles
+
+| Role | Main responsibility |
+| --- | --- |
+| Engineer | Submit laboratory evidence, investigate concerns and revise builds. |
+| Field analyst | Submit field comparisons and report safety concerns. |
+| Safety reviewer | Assess evidence, approve releases and close actions independently. |
+| Safety lead | Oversee ownership, deadlines and escalation. |
+| Auditor / observer | Inspect and export the assurance record. |
+
+Each role sees relevant controls. A second reviewer supports cases where the primary reviewer has a conflict.
+
+## Verify and explore
+
+```sh
+npm test                   # 56 automated tests
+npm run demo               # Complete scripted decision cycle
+npm run verify:evidence    # Exported fingerprint and snapshot checks
 ```
 
-### Make a deployment to Sepolia
+See the [user guide](./docs/user-guide.html), [solution design](./docs/solution.html), [UML diagrams](./docs/uml/) and [presenter guide](./docs/presenter-guide.html).
 
-This project includes an example Ignition module to deploy the contract. You can deploy this module to a locally simulated chain or to Sepolia.
+## Prototype limits
 
-To run the deployment to a local chain:
+The application uses synthetic records and selectable test identities on a resettable local EVM. It does not control vehicles or deliver OTA updates.
 
-```shell
-npx hardhat ignition deploy ignition/modules/Counter.ts
-```
-
-To run the deployment to Sepolia, you need an account with funds to send the transaction. The provided Hardhat configuration includes a Configuration Variable called `SEPOLIA_PRIVATE_KEY`, which you can use to set the private key of the account you want to use.
-
-You can set the `SEPOLIA_PRIVATE_KEY` variable using the `hardhat-keystore` plugin or by setting it as an environment variable.
-
-To set the `SEPOLIA_PRIVATE_KEY` config variable using `hardhat-keystore`:
-
-```shell
-npx hardhat keystore set SEPOLIA_PRIVATE_KEY
-```
-
-After setting the variable, you can run the deployment with the Sepolia network:
-
-```shell
-npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
-```
+Blockchain cannot establish whether submitted evidence is truthful. Production use needs authenticated identities, protected evidence storage, independently governed infrastructure and release enforcement. Passing the configured rules means **eligible for reviewer assessment**, not proof of safety or regulatory approval.
